@@ -4,7 +4,7 @@
 **Client:** EMT Bakery  
 **Module:** WEDE5020 – Web Development  
 **Institution:** IIE Rosebank College  
-**Student:** [Your Name]  
+**Student:** [ST10500444 Guy David Mutamba]  
 **Part:** One – Planning & Technical Foundation  
 **Date:** April 2026  
 
