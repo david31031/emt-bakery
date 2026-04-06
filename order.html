@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : order.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Order Online
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 Order page shell.
+                The primary conversion page of the website.
+                Structured as a multi-step order form with
+                clear progress indication. Full interactivity
+                (dynamic cart, step validation) added Phase 2.
+                All form fields are fully accessible with
+                correct label associations and ARIA attributes.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--
+    This page is the checkout page. We do NOT want search engines
+    to index it (it contains no evergreen content), so we use
+    noindex. However, we do want links followed.
+  -->
+  <meta name="description"
+        content="Order fresh artisan bread, custom cakes, and pastries online from EMT Bakery in Johannesburg. Easy online ordering with delivery or collection.">
+
+  <meta name="keywords"
+        content="order bread online Johannesburg, order cake online, buy artisan bread, order custom cake, EMT Bakery order">
+
+  <meta name="author"  content="EMT Bakery">
+  <meta name="robots"  content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="Order Online | EMT Bakery – Fresh Bread &amp; Cakes">
+  <meta property="og:description" content="Place your order for fresh artisan bread, pastries, and custom cakes from EMT Bakery. Delivery across Johannesburg.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za/order.html">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>Order Online | EMT Bakery – Fresh Bread &amp; Cakes Delivered</title>
+
+  <link rel="canonical" href="https://www.emtbakery.co.za/order.html">
+  <link rel="icon"      href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png" alt="EMT Bakery logo" width="150" height="60" loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html" aria-current="page">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header role="banner" class="page-header">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list">
+        <li><a href="index.html">Home</a></li>
+        <li aria-hidden="true" class="separator">&rsaquo;</li>
+        <li><span aria-current="page">Order Online</span></li>
+      </ol>
+    </nav>
+    <h1>Order Online</h1>
+    <p class="page-subheading">
+      Fresh orders placed before Wednesday are ready by Friday.
+      Delivery available across greater Johannesburg.
+    </p>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ── STEP PROGRESS INDICATOR ───────────────────────────────────
+      A visual progress indicator communicates where the user is
+      in the multi-step order process.
+
+      aria-label="Order progress" announces the purpose to screen readers.
+      The current step uses aria-current="step" to indicate the
+      active step to assistive technologies.
+
+      In Phase 2, JavaScript will update aria-current dynamically
+      as the user progresses through steps.
+    -->
+    <nav aria-label="Order progress steps" class="step-indicator">
+      <ol role="list">
+        <li class="step step--active" aria-current="step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <span class="step-label">Choose Products</span>
+        </li>
+        <li class="step" aria-disabled="true">
+          <span class="step-number" aria-hidden="true">2</span>
+          <span class="step-label">Customise</span>
+        </li>
+        <li class="step" aria-disabled="true">
+          <span class="step-number" aria-hidden="true">3</span>
+          <span class="step-label">Delivery</span>
+        </li>
+        <li class="step" aria-disabled="true">
+          <span class="step-number" aria-hidden="true">4</span>
+          <span class="step-label">Checkout</span>
+        </li>
+      </ol>
+    </nav>
+    <!-- NOTE: In Phase 2, each step will be a separate <section>
+         shown/hidden via JavaScript. All steps are included in
+         the HTML skeleton for structural completeness. -->
+
+
+    <!-- Two-column layout: Product selection left, Order summary right -->
+    <div class="order-layout">
+
+      <!-- ── LEFT: ORDER FORM ───────────────────────────────────────── -->
+      <div class="order-form-column">
+
+        <!-- ── STEP 1: PRODUCT SELECTION ─────────────────────────── -->
+        <section id="step-1" aria-labelledby="step1-heading" class="order-step">
+
+          <h2 id="step1-heading">Step 1: Choose Your Products</h2>
+
+          <!-- Product category filter tabs
+               data-filter attributes used by Phase 2 JavaScript -->
+          <div class="product-filter-tabs" role="tablist" aria-label="Product categories">
+            <button role="tab" aria-selected="true"  aria-controls="tab-all"     id="tab-btn-all"     class="tab-btn tab-btn--active">All</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-breads"  id="tab-btn-breads"  class="tab-btn">Breads</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-cakes"   id="tab-btn-cakes"   class="tab-btn">Cakes</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-pastry"  id="tab-btn-pastry"  class="tab-btn">Pastries</button>
+          </div>
+
+          <!--
+            Order form: The overall form wraps all steps.
+            Action will be processed server-side in Phase 2.
+          -->
+          <form id="order-form"
+                action="order-handler.php"
+                method="POST"
+                aria-label="Product order form"
+                class="order-product-form">
+
+            <!-- Tab panel: All Products -->
+            <div id="tab-all"
+                 role="tabpanel"
+                 aria-labelledby="tab-btn-all"
+                 class="tab-panel tab-panel--active">
+
+              <!-- ── PRODUCT ITEM: Sourdough ─ -->
+              <div class="order-product-item">
+                <img src="images/sourdough.jpg"
+                     alt="Classic sourdough loaf"
+                     width="100" height="80"
+                     loading="lazy">
+                <div class="product-item-details">
+                  <h3>Classic Sourdough Loaf</h3>
+                  <p>72-hour fermented, stone-baked. Vegan.</p>
+                  <p class="price"><strong>R 65</strong> per loaf</p>
+                </div>
+                <div class="product-item-quantity">
+                  <label for="qty-sourdough">Quantity:</label>
+                  <!--
+                    type="number" with min="0" prevents negative
+                    quantities. step="1" ensures only whole numbers.
+                  -->
+                  <input type="number"
+                         id="qty-sourdough"
+                         name="qty_sourdough"
+                         value="0"
+                         min="0"
+                         max="20"
+                         step="1"
+                         aria-describedby="sourdough-price-info">
+                  <p id="sourdough-price-info" class="sr-only">
+                    Classic Sourdough Loaf costs R 65 per unit.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ── PRODUCT ITEM: Ciabatta ─ -->
+              <div class="order-product-item">
+                <img src="images/ciabatta.jpg"
+                     alt="Ciabatta bread loaf"
+                     width="100" height="80"
+                     loading="lazy">
+                <div class="product-item-details">
+                  <h3>Ciabatta Loaf</h3>
+                  <p>Crisp crust, open crumb. Vegan option available.</p>
+                  <p class="price"><strong>R 55</strong> per loaf</p>
+                </div>
+                <div class="product-item-quantity">
+                  <label for="qty-ciabatta">Quantity:</label>
+                  <input type="number"
+                         id="qty-ciabatta"
+                         name="qty_ciabatta"
+                         value="0"
+                         min="0"
+                         max="20"
+                         step="1">
+                </div>
+              </div>
+
+              <!-- ── PRODUCT ITEM: Croissants ─ -->
+              <div class="order-product-item">
+                <img src="images/croissants.jpg"
+                     alt="Butter croissants in a paper bag"
+                     width="100" height="80"
+                     loading="lazy">
+                <div class="product-item-details">
+                  <h3>Butter Croissants (6-pack)</h3>
+                  <p>Freshly baked. Flavours: Plain, Almond, Chocolate, Ham &amp; Cheese.</p>
+                  <p class="price"><strong>R 135</strong> per 6-pack</p>
+                </div>
+                <div class="product-item-quantity">
+                  <label for="qty-croissants">Quantity:</label>
+                  <input type="number"
+                         id="qty-croissants"
+                         name="qty_croissants"
+                         value="0"
+                         min="0"
+                         max="10"
+                         step="1">
+                </div>
+              </div>
+
+              <!-- ── PRODUCT ITEM: Muffins ─ -->
+              <div class="order-product-item">
+                <img src="images/muffins.jpg"
+                     alt="Assorted muffins in a tray"
+                     width="100" height="80"
+                     loading="lazy">
+                <div class="product-item-details">
+                  <h3>Assorted Muffins (6-pack)</h3>
+                  <p>Blueberry, chocolate chip, bran &amp; raisin, lemon poppy seed. GF/Vegan options available.</p>
+                  <p class="price"><strong>R 110</strong> per 6-pack</p>
+                </div>
+                <div class="product-item-quantity">
+                  <label for="qty-muffins">Quantity:</label>
+                  <input type="number"
+                         id="qty-muffins"
+                         name="qty_muffins"
+                         value="0"
+                         min="0"
+                         max="10"
+                         step="1">
+                </div>
+              </div>
+
+            </div><!-- /#tab-all -->
+
+          </form><!-- /#order-form -->
+
+          <!-- Navigation between steps -->
+          <div class="step-navigation">
+            <button type="button"
+                    class="btn btn-primary"
+                    id="next-step-1"
+                    aria-controls="step-2">
+              Continue to Customise &rarr;
+            </button>
+          </div>
+
+        </section><!-- /#step-1 -->
+
+
+        <!-- ── STEP 2: CUSTOMISATION ──────────────────────────────
+          Hidden in Phase 1. Will be shown by JavaScript when
+          Step 1 is complete. Included here for structural planning.
+        -->
+        <section id="step-2"
+                 aria-labelledby="step2-heading"
+                 class="order-step order-step--hidden"
+                 aria-hidden="true">
+
+          <h2 id="step2-heading">Step 2: Customise Your Order</h2>
+
+          <form aria-label="Order customisation form">
+            <fieldset>
+              <legend>Special Instructions</legend>
+              <div class="form-group">
+                <label for="special-instructions">
+                  Dietary requirements or special requests:
+                </label>
+                <textarea id="special-instructions"
+                          name="special_instructions"
+                          rows="4"
+                          maxlength="500"
+                          placeholder="e.g. Gluten-free only, nut allergy, please include a message card..."></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Gift Packaging</legend>
+              <div class="form-group form-group--checkbox">
+                <input type="checkbox"
+                       id="gift-packaging"
+                       name="gift_packaging"
+                       value="yes">
+                <label for="gift-packaging">
+                  Add gift packaging (ribbon &amp; branded tissue paper) – <strong>+R 35</strong>
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="gift-message">Gift message (optional, max 100 characters):</label>
+                <input type="text"
+                       id="gift-message"
+                       name="gift_message"
+                       maxlength="100"
+                       placeholder="e.g. Happy Birthday! With love from the team.">
+              </div>
+            </fieldset>
+          </form>
+
+          <div class="step-navigation">
+            <button type="button" class="btn btn-secondary" id="back-step-2">&larr; Back</button>
+            <button type="button" class="btn btn-primary"   id="next-step-2">Continue to Delivery &rarr;</button>
+          </div>
+
+        </section><!-- /#step-2 -->
+
+
+        <!-- ── STEP 3: DELIVERY DETAILS ───────────────────────────
+          Hidden in Phase 1. Shown by JS after Step 2.
+        -->
+        <section id="step-3"
+                 aria-labelledby="step3-heading"
+                 class="order-step order-step--hidden"
+                 aria-hidden="true">
+
+          <h2 id="step3-heading">Step 3: Delivery or Collection</h2>
+
+          <form aria-label="Delivery details form">
+            <fieldset>
+              <legend>Fulfilment Method</legend>
+
+              <div class="form-group form-group--radio">
+                <input type="radio"
+                       id="method-delivery"
+                       name="fulfilment_method"
+                       value="delivery"
+                       checked
+                       aria-describedby="delivery-note">
+                <label for="method-delivery">
+                  Delivery – <strong>R 80</strong> flat rate, Johannesburg only
+                </label>
+                <p id="delivery-note" class="form-hint">
+                  Delivery available Monday – Friday, 09:00 – 17:00.
+                  Same-week delivery: order before Wednesday 18:00.
+                </p>
+              </div>
+
+              <div class="form-group form-group--radio">
+                <input type="radio"
+                       id="method-collection"
+                       name="fulfilment_method"
+                       value="collection"
+                       aria-describedby="collection-note">
+                <label for="method-collection">
+                  Collection – <strong>Free</strong>. Collect from our bakery.
+                </label>
+                <p id="collection-note" class="form-hint">
+                  14 Heritage Road, Johannesburg. Ready by 08:00 on your chosen date.
+                </p>
+              </div>
+
+            </fieldset>
+
+            <fieldset id="delivery-address-fieldset">
+              <legend>Delivery Address</legend>
+
+              <div class="form-group">
+                <label for="delivery-name">
+                  Recipient Name <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="text"
+                       id="delivery-name"
+                       name="delivery_name"
+                       autocomplete="name"
+                       required aria-required="true"
+                       placeholder="Full name of recipient">
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-phone">
+                  Contact Number <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="tel"
+                       id="delivery-phone"
+                       name="delivery_phone"
+                       autocomplete="tel"
+                       required aria-required="true"
+                       placeholder="+27 82 000 0000">
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-address">
+                  Street Address <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="text"
+                       id="delivery-address"
+                       name="delivery_address"
+                       autocomplete="street-address"
+                       required aria-required="true"
+                       placeholder="e.g. 123 Main Street, Sandton">
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-suburb">Suburb</label>
+                <input type="text"
+                       id="delivery-suburb"
+                       name="delivery_suburb"
+                       autocomplete="address-level2"
+                       placeholder="e.g. Sandton">
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-date">
+                  Preferred Delivery Date <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="date"
+                       id="delivery-date"
+                       name="delivery_date"
+                       required aria-required="true"
+                       aria-describedby="delivery-date-hint">
+                <p id="delivery-date-hint" class="form-hint">
+                  Minimum 3 business days from today. For custom cakes, minimum 5 business days.
+                </p>
+              </div>
+
+            </fieldset>
+
+          </form>
+
+          <div class="step-navigation">
+            <button type="button" class="btn btn-secondary" id="back-step-3">&larr; Back</button>
+            <button type="button" class="btn btn-primary"   id="next-step-3">Continue to Checkout &rarr;</button>
+          </div>
+
+        </section><!-- /#step-3 -->
+
+
+        <!-- ── STEP 4: CHECKOUT ───────────────────────────────────
+          Hidden in Phase 1. Shown by JS after Step 3.
+        -->
+        <section id="step-4"
+                 aria-labelledby="step4-heading"
+                 class="order-step order-step--hidden"
+                 aria-hidden="true">
+
+          <h2 id="step4-heading">Step 4: Checkout</h2>
+
+          <form id="checkout-form"
+                action="order-handler.php"
+                method="POST"
+                aria-label="Checkout and payment form">
+
+            <fieldset>
+              <legend>Your Contact Details</legend>
+              <div class="form-group">
+                <label for="checkout-name">
+                  Full Name <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="text"
+                       id="checkout-name"
+                       name="customer_name"
+                       autocomplete="name"
+                       required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="checkout-email">
+                  Email Address <span aria-label="required" class="required-marker">*</span>
+                </label>
+                <input type="email"
+                       id="checkout-email"
+                       name="customer_email"
+                       autocomplete="email"
+                       required aria-required="true"
+                       aria-describedby="email-receipt-hint">
+                <p id="email-receipt-hint" class="form-hint">
+                  Your order confirmation will be sent to this address.
+                </p>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Payment Method</legend>
+              <!--
+                Payment integration (EFT, PayFast, SnapScan) will be
+                implemented in Phase 2. The structure is laid out here.
+              -->
+              <div class="form-group form-group--radio">
+                <input type="radio" id="pay-eft"     name="payment_method" value="eft"     checked>
+                <label for="pay-eft">EFT / Bank Transfer</label>
+              </div>
+              <div class="form-group form-group--radio">
+                <input type="radio" id="pay-payfast" name="payment_method" value="payfast">
+                <label for="pay-payfast">PayFast (Card / Instant EFT)</label>
+              </div>
+              <div class="form-group form-group--radio">
+                <input type="radio" id="pay-snapscan" name="payment_method" value="snapscan">
+                <label for="pay-snapscan">SnapScan</label>
+              </div>
+            </fieldset>
+
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox"
+                     id="order-consent"
+                     name="order_consent"
+                     value="yes"
+                     required aria-required="true"
+                     aria-describedby="order-consent-desc">
+              <label for="order-consent">
+                I have read and agree to the
+                <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+                and <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                <span aria-label="required" class="required-marker">*</span>
+              </label>
+              <p id="order-consent-desc" class="form-hint">Required to complete your order.</p>
+            </div>
+
+            <div class="step-navigation">
+              <button type="button" class="btn btn-secondary" id="back-step-4">&larr; Back</button>
+              <button type="submit" class="btn btn-primary btn-large">
+                Place Order &amp; Pay Now
+              </button>
+            </div>
+
+          </form>
+
+        </section><!-- /#step-4 -->
+
+      </div><!-- /.order-form-column -->
+
+
+      <!-- ── RIGHT: ORDER SUMMARY SIDEBAR ──────────────────────────── -->
+      <!--
+        <aside> is semantically correct here because the order
+        summary is complementary to (but not part of) the
+        main order form content.
+      -->
+      <aside aria-label="Your order summary" class="order-summary-sidebar">
+
+        <div class="order-summary-box">
+          <h2>Order Summary</h2>
+
+          <!--
+            This will be dynamically populated by JavaScript in Phase 2.
+            The static placeholder structure shows the intended layout.
+          -->
+          <div id="order-summary-items" aria-live="polite" aria-atomic="true">
+            <!--
+              aria-live="polite" tells screen readers to announce
+              changes to this region when they occur (when the user
+              adds/removes items). This is critical for cart accessibility.
+              aria-atomic="true" means the entire region is announced
+              as a unit, not just the changed part.
+            -->
+            <p class="empty-cart-message">
+              Your cart is empty. Select products above to begin your order.
+            </p>
+          </div>
+
+          <div class="order-totals">
+            <div class="totals-row">
+              <span>Subtotal:</span>
+              <span id="summary-subtotal">R 0.00</span>
+            </div>
+            <div class="totals-row">
+              <span>Delivery:</span>
+              <span id="summary-delivery">R 0.00</span>
+            </div>
+            <div class="totals-row totals-row--total">
+              <span><strong>Total:</strong></span>
+              <span id="summary-total"><strong>R 0.00</strong></span>
+            </div>
+          </div>
+
+          <!--
+            Minimum order notice
+          -->
+          <p class="order-notice">
+            <strong>Note:</strong> Minimum order value is R 150.
+            Free delivery on orders over R 500.
+          </p>
+
+        </div><!-- /.order-summary-box -->
+
+        <!-- Delivery info callout -->
+        <div class="delivery-info-box">
+          <h3>Delivery Information</h3>
+          <ul>
+            <li>Delivery: R 80 flat rate (Johannesburg)</li>
+            <li>Free delivery on orders over R 500</li>
+            <li>Order by Wednesday for Friday delivery</li>
+            <li>Collection available daily from 07:00</li>
+          </ul>
+        </div>
+
+      </aside><!-- /.order-summary-sidebar -->
+
+    </div><!-- /.order-layout -->
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER (consistent across all pages)
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-white.png" alt="EMT Bakery logo" width="120" height="48" loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><small>&copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a></small></p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script>  -->
+  <!-- <script src="js/order.js"></script> -->
+
+</body>
+</html>

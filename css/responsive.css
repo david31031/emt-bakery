@@ -1,0 +1,28 @@
+/*
+ * ============================================================
+ * FILE        : responsive.css
+ * PROJECT     : EMT Bakery – Official Website
+ * AUTHOR      : [Student Name] | IIE Rosebank College
+ * MODULE      : WEDE5020 – Web Development
+ * DATE        : April 2026
+ * DESCRIPTION : Responsive / media query styles.
+ *               ALL styles to be developed in Phase 2.
+ *               This file is a structural placeholder only.
+ *
+ * BREAKPOINTS PLANNED (Mobile-First approach):
+ *
+ *   Default         : 0px+    (Mobile – single column, base styles)
+ *   @media 480px+   : Small phones in landscape
+ *   @media 768px+   : Tablets – two-column layouts begin
+ *   @media 1024px+  : Small desktops – nav fully horizontal
+ *   @media 1200px+  : Large desktops – max content width applied
+ *   @media 1440px+  : Wide screens – hero image scales up
+ *
+ * MOBILE-FIRST METHODOLOGY:
+ *   Base styles target mobile.
+ *   Media queries ONLY add complexity at larger breakpoints.
+ *   This ensures smallest/slowest devices get the lightest code.
+ * ============================================================
+ */
+
+/* Phase 2 – Responsive media queries to be added here */

@@ -1,0 +1,29 @@
+/*
+ * ============================================================
+ * FILE        : animations.css
+ * PROJECT     : EMT Bakery – Official Website
+ * AUTHOR      : [Student Name] | IIE Rosebank College
+ * MODULE      : WEDE5020 – Web Development
+ * DATE        : April 2026
+ * DESCRIPTION : CSS animations and transitions.
+ *               ALL animations to be developed in Phase 2.
+ *
+ * PLANNED ANIMATIONS:
+ *   - Hero section fade-in on page load
+ *   - Product card hover lift effect (transform + box-shadow)
+ *   - Navigation link underline slide-in on hover
+ *   - Button press feedback (scale transform)
+ *   - Gallery image zoom on hover
+ *   - Smooth scroll behaviour
+ *
+ * ACCESSIBILITY NOTE:
+ *   All animations will respect the user's OS preference:
+ *     @media (prefers-reduced-motion: reduce) {
+ *       * { animation: none !important; transition: none !important; }
+ *     }
+ *   This ensures animations do not cause discomfort for users
+ *   with vestibular disorders (WCAG 2.3.3 guideline).
+ * ============================================================
+ */
+
+/* Phase 2 – Animation styles to be added here */

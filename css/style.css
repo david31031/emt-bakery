@@ -1,0 +1,39 @@
+/*
+ * ============================================================
+ * FILE        : style.css
+ * PROJECT     : EMT Bakery – Official Website
+ * AUTHOR      : [Student Name] | IIE Rosebank College
+ * MODULE      : WEDE5020 – Web Development
+ * DATE        : April 2026
+ * DESCRIPTION : Main stylesheet.
+ *               ALL CSS to be developed in Phase 2.
+ *               This file is a structural placeholder only.
+ *
+ * PLANNED STRUCTURE (Phase 2):
+ *   1.  CSS Custom Properties (variables) – colours, fonts, spacing
+ *   2.  CSS Reset / Normalise
+ *   3.  Base typography styles
+ *   4.  Layout utilities (container, grid, flex helpers)
+ *   5.  Accessibility utilities (.sr-only, .skip-link)
+ *   6.  Navigation styles
+ *   7.  Header & Hero styles
+ *   8.  Component styles (cards, buttons, forms, tables)
+ *   9.  Page-specific styles
+ *   10. Footer styles
+ *
+ * COLOUR PALETTE (planned):
+ *   --color-primary   : #5C3317  (Warm Bakery Brown)
+ *   --color-accent    : #C8951A  (Gold)
+ *   --color-bg        : #FDF6EC  (Cream)
+ *   --color-text      : #333333  (Dark Grey)
+ *   --color-text-muted: #666666  (Mid Grey)
+ *   --color-white     : #FFFFFF
+ *
+ * TYPOGRAPHY (planned):
+ *   Font Family : 'Lato' (body), 'Playfair Display' (headings)
+ *   Base Size   : 16px (1rem)
+ *   Scale       : 1.25 Major Third
+ * ============================================================
+ */
+
+/* Phase 2 – Styles to be added here */

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : products.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Products
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 Products page shell.
+                Showcases all product categories using
+                proper semantic grouping with <section>,
+                <article>, and <figure> elements.
+                Anchored sections allow direct linking
+                from the home page product cards.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description"
+        content="Explore EMT Bakery's full range of artisan breads, custom cakes, wedding cakes, and corporate catering options. Fresh daily in Johannesburg.">
+
+  <meta name="keywords"
+        content="fresh bread Johannesburg, custom birthday cakes, wedding cakes, sourdough bread, ciabatta, rye bread, artisan pastries, corporate catering bakery">
+
+  <meta name="author"  content="EMT Bakery">
+  <meta name="robots"  content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="Products | EMT Bakery – Artisan Breads &amp; Custom Cakes">
+  <meta property="og:description" content="Browse our full range of freshly baked artisan breads, celebration cakes, wedding cakes, and pastries.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za/products.html">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>Products | EMT Bakery – Artisan Breads &amp; Custom Cakes</title>
+
+  <link rel="canonical" href="https://www.emtbakery.co.za/products.html">
+  <link rel="icon"      href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png" alt="EMT Bakery logo" width="150" height="60" loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" aria-current="page">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header role="banner" class="page-header">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list">
+        <li><a href="index.html">Home</a></li>
+        <li aria-hidden="true" class="separator">&rsaquo;</li>
+        <li><span aria-current="page">Products</span></li>
+      </ol>
+    </nav>
+    <h1>Our Products</h1>
+    <p class="page-subheading">
+      Everything is baked fresh daily. No preservatives. No compromises.
+    </p>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ── IN-PAGE NAVIGATION ───────────────────────────────────────
+      Allows users to jump to a product category without scrolling.
+      Particularly useful for keyboard users and screen readers.
+      These are internal anchor links (href="#sectionId").
+    -->
+    <nav aria-label="Product Category Navigation" class="product-filter-nav">
+      <ul role="list">
+        <li><a href="#breads">Breads &amp; Loaves</a></li>
+        <li><a href="#custom-cakes">Custom Cakes</a></li>
+        <li><a href="#wedding-cakes">Wedding Cakes</a></li>
+        <li><a href="#pastries">Pastries &amp; Treats</a></li>
+        <li><a href="#corporate">Corporate Catering</a></li>
+      </ul>
+    </nav>
+
+    <!-- ── SECTION 1: BREADS ──────────────────────────────────────── -->
+    <!--
+      id="breads" provides the anchor target for the in-page nav
+      link and for external links from the home page product cards.
+    -->
+    <section id="breads" aria-labelledby="breads-heading" class="product-category">
+
+      <h2 id="breads-heading">Breads &amp; Loaves</h2>
+      <p class="category-intro">
+        All our breads are made using traditional techniques and
+        slow fermentation. Available fresh daily – order online for
+        guaranteed availability.
+      </p>
+
+      <div class="product-grid">
+
+        <article class="product-card" aria-labelledby="sourdough-title">
+          <figure>
+            <img src="images/sourdough.jpg"
+                 alt="Round sourdough loaf with a deeply scored crust, dusted with flour, resting on a wooden board"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="sourdough-title">Classic Sourdough</h3>
+            <p>
+              72-hour cold-fermented sourdough, stone-baked in our deck oven.
+              Open, airy crumb with a tangy depth of flavour.
+              Available as a standard (700g) or large (1.2kg) loaf.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 65</li>
+              <li><strong>Available:</strong> Monday – Saturday</li>
+              <li><strong>Dietary:</strong> Vegan</li>
+            </ul>
+            <a href="order.html?product=sourdough" class="btn btn-outline">Add to Order</a>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="ciabatta-title">
+          <figure>
+            <img src="images/ciabatta.jpg"
+                 alt="Two ciabatta rolls with a light, airy crumb and a crisp golden exterior"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="ciabatta-title">Ciabatta</h3>
+            <p>
+              Classic Italian ciabatta with a crisp crust and an open, chewy crumb.
+              Perfect for sandwiches, bruschetta, and alongside soups.
+              Available as rolls or full loaves.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 30 (rolls) | R 55 (loaf)</li>
+              <li><strong>Available:</strong> Tuesday, Thursday, Saturday</li>
+              <li><strong>Dietary:</strong> Vegan option available</li>
+            </ul>
+            <a href="order.html?product=ciabatta" class="btn btn-outline">Add to Order</a>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="rye-title">
+          <figure>
+            <img src="images/rye-bread.jpg"
+                 alt="Dark rye bread loaf sliced to reveal a dense, moist crumb with whole caraway seeds"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="rye-title">Dark Rye Bread</h3>
+            <p>
+              Dense, richly flavoured dark rye with caraway seeds.
+              Naturally lower in gluten, high in fibre, and ideal
+              for smoked salmon, cream cheese, or cold cuts.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 75</li>
+              <li><strong>Available:</strong> Wednesday &amp; Saturday</li>
+              <li><strong>Dietary:</strong> Vegan | High Fibre</li>
+            </ul>
+            <a href="order.html?product=rye" class="btn btn-outline">Add to Order</a>
+          </div>
+        </article>
+
+      </div><!-- /.product-grid -->
+
+    </section><!-- /#breads -->
+
+
+    <!-- ── SECTION 2: CUSTOM CAKES ────────────────────────────────── -->
+    <section id="custom-cakes" aria-labelledby="custom-cakes-heading" class="product-category">
+
+      <h2 id="custom-cakes-heading">Custom Celebration Cakes</h2>
+      <p class="category-intro">
+        Every custom cake starts with a consultation. We craft cakes for
+        birthdays, anniversaries, graduations, gender reveals, and any
+        occasion worth celebrating.
+      </p>
+
+      <div class="product-grid">
+
+        <article class="product-card" aria-labelledby="birthday-cake-title">
+          <figure>
+            <img src="images/birthday-cake.jpg"
+                 alt="A vibrant three-tier birthday cake with buttercream rosettes and pastel fondant decorations"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="birthday-cake-title">Birthday Cakes</h3>
+            <p>
+              From a child&apos;s favourite character to an elegant adult celebration,
+              our birthday cakes are fully bespoke in size, flavour, and design.
+              Flavours include vanilla bean, chocolate fudge, red velvet, lemon curd,
+              and carrot with cream cheese.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 450 (10 portions)</li>
+              <li><strong>Lead Time:</strong> Minimum 5 business days</li>
+              <li><strong>Customisable:</strong> Size, flavour, design, dietary</li>
+            </ul>
+            <a href="contact.html?enquiry=custom-cake" class="btn btn-outline">Enquire Now</a>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="corporate-cake-title">
+          <figure>
+            <img src="images/corporate-cake.jpg"
+                 alt="A sleek, logo-branded corporate cake in a company's signature dark blue and gold colours"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="corporate-cake-title">Corporate &amp; Branded Cakes</h3>
+            <p>
+              Impress stakeholders, reward staff, or celebrate a company milestone
+              with a professionally branded cake incorporating your company colours,
+              logo, and messaging. Edible printing and hand-piping available.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 650</li>
+              <li><strong>Lead Time:</strong> Minimum 7 business days</li>
+              <li><strong>Sizes:</strong> 20, 30, or 50+ portions</li>
+            </ul>
+            <a href="contact.html?enquiry=corporate" class="btn btn-outline">Enquire Now</a>
+          </div>
+        </article>
+
+      </div>
+
+    </section><!-- /#custom-cakes -->
+
+
+    <!-- ── SECTION 3: WEDDING CAKES ───────────────────────────────── -->
+    <section id="wedding-cakes" aria-labelledby="wedding-cakes-heading" class="product-category">
+
+      <h2 id="wedding-cakes-heading">Wedding Cakes</h2>
+      <p class="category-intro">
+        Your wedding cake is one of the most visible elements of your
+        reception. We work closely with you from initial concept to
+        final delivery – ensuring a cake that is as beautiful as it
+        is delicious.
+      </p>
+
+      <div class="product-grid">
+
+        <article class="product-card" aria-labelledby="classic-wedding-title">
+          <figure>
+            <img src="images/wedding-cake.jpg"
+                 alt="An elegant five-tier white fondant wedding cake with cascading white roses and eucalyptus leaves"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="classic-wedding-title">Classic Wedding Cake</h3>
+            <p>
+              Timeless, elegant tiers in smooth fondant or textured buttercream.
+              Customisable flavours, fillings, and fresh or sugar-flower decoration.
+              Includes a complimentary design consultation and tasting session
+              for two in our Johannesburg studio.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 2 500 (two-tier, 50 portions)</li>
+              <li><strong>Lead Time:</strong> Minimum 6 weeks</li>
+              <li><strong>Includes:</strong> Delivery &amp; setup within Johannesburg</li>
+            </ul>
+            <a href="contact.html?enquiry=wedding-cake" class="btn btn-outline">Book a Consultation</a>
+          </div>
+        </article>
+
+      </div>
+
+    </section><!-- /#wedding-cakes -->
+
+
+    <!-- ── SECTION 4: PASTRIES ─────────────────────────────────────── -->
+    <section id="pastries" aria-labelledby="pastries-heading" class="product-category">
+
+      <h2 id="pastries-heading">Pastries &amp; Treats</h2>
+      <p class="category-intro">
+        Perfect for morning meetings, afternoon breaks, or a treat
+        to bring to friends. Baked fresh every morning.
+      </p>
+
+      <div class="product-grid">
+
+        <article class="product-card" aria-labelledby="croissant-title">
+          <figure>
+            <img src="images/croissants.jpg"
+                 alt="A basket of golden, flaky butter croissants, one split open to show the layered interior"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="croissant-title">Butter Croissants</h3>
+            <p>
+              Classic French-style croissants made with South African grass-fed butter.
+              72 layers of flaky, golden perfection. Also available
+              as almond, chocolate, or ham-and-cheese filled croissants.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> R 25 each | R 135 (6-pack)</li>
+              <li><strong>Available:</strong> Daily until sold out</li>
+            </ul>
+            <a href="order.html?product=croissants" class="btn btn-outline">Add to Order</a>
+          </div>
+        </article>
+
+        <article class="product-card" aria-labelledby="muffin-title">
+          <figure>
+            <img src="images/muffins.jpg"
+                 alt="Six assorted muffins – blueberry, chocolate chip, and bran – displayed in a paper-lined tray"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="muffin-title">Assorted Muffins</h3>
+            <p>
+              Rotating seasonal selection including blueberry, double chocolate,
+              bran and raisin, and lemon poppy seed. Vegan and gluten-free
+              variants available daily.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> R 20 each | R 110 (6-pack)</li>
+              <li><strong>Available:</strong> Daily</li>
+              <li><strong>Dietary:</strong> Vegan and GF options</li>
+            </ul>
+            <a href="order.html?product=muffins" class="btn btn-outline">Add to Order</a>
+          </div>
+        </article>
+
+      </div>
+
+    </section><!-- /#pastries -->
+
+
+    <!-- ── SECTION 5: CORPORATE CATERING ──────────────────────────── -->
+    <section id="corporate" aria-labelledby="corporate-heading" class="product-category">
+
+      <h2 id="corporate-heading">Corporate &amp; Bulk Catering</h2>
+      <p class="category-intro">
+        We supply professional baked-goods catering for meetings,
+        product launches, staff events, and recurring corporate orders.
+        Dedicated account management is available for regular clients.
+      </p>
+
+      <div class="product-grid">
+
+        <article class="product-card" aria-labelledby="corporate-platter-title">
+          <figure>
+            <img src="images/corporate-catering.jpg"
+                 alt="A large professional platter of assorted pastries, mini quiches, and sliced breads for a corporate event"
+                 width="400" height="300" loading="lazy">
+          </figure>
+          <div class="card-content">
+            <h3 id="corporate-platter-title">Meeting &amp; Event Platters</h3>
+            <p>
+              Professionally arranged platters for meetings, workshops, and
+              client entertainment. Includes a selection of artisan breads,
+              savoury pastries, sweet treats, and seasonal preserves.
+              Minimum order: 10 persons.
+            </p>
+            <ul class="product-meta">
+              <li><strong>Price:</strong> From R 85 per person</li>
+              <li><strong>Lead Time:</strong> Minimum 48 hours</li>
+              <li><strong>Delivery:</strong> Johannesburg CBD &amp; surrounds</li>
+            </ul>
+            <a href="contact.html?enquiry=corporate" class="btn btn-outline">Request a Quote</a>
+          </div>
+        </article>
+
+      </div>
+
+    </section><!-- /#corporate -->
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER (consistent across all pages)
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-white.png" alt="EMT Bakery logo" width="120" height="48" loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><small>&copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a></small></p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

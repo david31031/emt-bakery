@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : order-confirmation.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Order Confirmation
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Post-checkout order confirmation page.
+                Users land here after a successful order
+                submission. Provides order reference, summary,
+                and next-step instructions.
+                In Phase 2, dynamic order details will be
+                injected via JavaScript or server-side PHP.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--
+    noindex: Confirmation pages should never appear in search results.
+    They contain transactional content with no evergreen value.
+  -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="EMT Bakery">
+
+  <!--
+    Open Graph: noindex prevents search indexing but social/WhatsApp
+    sharing previews still benefit from og tags if a user shares the URL.
+  -->
+  <meta property="og:title"       content="Order Confirmed | EMT Bakery">
+  <meta property="og:description" content="Your EMT Bakery order has been confirmed. Thank you for your order!">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>Order Confirmed | EMT Bakery – Thank You!</title>
+
+  <!--
+    Canonical points back to the order page since the confirmation
+    page URL can vary per session (e.g. with query strings).
+  -->
+  <link rel="canonical" href="https://www.emtbakery.co.za/order.html">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png" alt="EMT Bakery logo" width="150" height="60" loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" role="main" class="confirmation-main">
+
+    <!-- ── ORDER CONFIRMATION MESSAGE ────────────────────────────────
+      role="alert" causes screen readers to announce this
+      section immediately when the page loads – important for
+      confirming to all users that the order was successful.
+    -->
+    <section aria-labelledby="confirm-heading" class="confirmation-section" role="alert">
+
+      <!--
+        The checkmark/success icon is decorative, so aria-hidden="true"
+        prevents screen readers from announcing it.
+      -->
+      <span class="success-icon" aria-hidden="true">&#10003;</span>
+
+      <h1 id="confirm-heading">Order Confirmed!</h1>
+
+      <p class="confirmation-message">
+        Thank you for your order. We have received it successfully and
+        will begin preparing it shortly. A confirmation email has been
+        sent to your registered email address.
+      </p>
+
+    </section>
+
+    <!-- ── ORDER DETAILS ──────────────────────────────────────────────
+      In Phase 2, the order reference, items, and totals will be
+      dynamically populated by the server-side PHP script.
+      Static placeholders define the structure for HTML Part One.
+    -->
+    <section aria-labelledby="order-details-heading" class="order-details-section">
+
+      <h2 id="order-details-heading">Your Order Details</h2>
+
+      <dl class="order-summary-dl">
+
+        <dt>Order Reference:</dt>
+        <dd id="order-ref">
+          <strong>#EMT-20260001</strong>
+          <!-- Phase 2: Dynamically populated from PHP session or URL parameter -->
+        </dd>
+
+        <dt>Order Date:</dt>
+        <dd id="order-date">
+          <time datetime="2026-04-06">6 April 2026</time>
+          <!-- Phase 2: Dynamically populated -->
+        </dd>
+
+        <dt>Estimated Ready / Delivery Date:</dt>
+        <dd id="order-delivery-date">
+          <time datetime="2026-04-11">11 April 2026</time>
+          <!-- Phase 2: Calculated server-side based on order type -->
+        </dd>
+
+        <dt>Fulfilment Method:</dt>
+        <dd id="order-fulfilment">Delivery – 14 Delivery Road, Sandton, 2196</dd>
+
+      </dl>
+
+    </section>
+
+    <!-- ── WHAT HAPPENS NEXT ──────────────────────────────────────── -->
+    <section aria-labelledby="next-steps-heading" class="next-steps-section">
+
+      <h2 id="next-steps-heading">What Happens Next?</h2>
+
+      <ol class="next-steps-list">
+        <li>
+          <strong>Confirmation Email:</strong>
+          You will receive an order confirmation email within 5 minutes
+          with your full order summary and payment instructions (if paying by EFT).
+        </li>
+        <li>
+          <strong>Payment (if EFT):</strong>
+          Please make your EFT payment within 24 hours using your
+          order reference number as the payment reference.
+          Our banking details are included in your confirmation email.
+        </li>
+        <li>
+          <strong>Preparation:</strong>
+          Once payment is confirmed, our bakers will begin preparing
+          your order. You will receive a &ldquo;your order is being prepared&rdquo;
+          notification by email.
+        </li>
+        <li>
+          <strong>Delivery / Collection:</strong>
+          On your chosen date, your order will be delivered or ready
+          for collection. You will receive an SMS notification when
+          it is on its way.
+        </li>
+      </ol>
+
+    </section>
+
+    <!-- ── CONTINUE SHOPPING CTA ──────────────────────────────────── -->
+    <section aria-labelledby="continue-heading" class="cta-section">
+      <h2 id="continue-heading">Need Anything Else?</h2>
+      <p>Explore more of our products or get in touch with any questions.</p>
+      <a href="index.html"   class="btn btn-primary"   role="button">Return to Home</a>
+      <a href="products.html" class="btn btn-secondary" role="button">Continue Shopping</a>
+      <a href="contact.html"  class="btn btn-secondary" role="button">Contact Us</a>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-white.png" alt="EMT Bakery logo" width="120" height="48" loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><small>&copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a></small></p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

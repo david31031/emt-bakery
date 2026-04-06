@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : contact.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Contact Us
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 Contact page shell.
+                Includes accessible contact form using
+                <fieldset>/<legend> grouping, correct
+                for/id label pairing, and <address> element
+                for business contact details.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description"
+        content="Contact EMT Bakery in Johannesburg. Enquire about custom cakes, wedding cakes, corporate catering, or general orders. We respond within one business day.">
+
+  <meta name="keywords"
+        content="contact EMT Bakery, bakery Johannesburg contact, custom cake enquiry, wedding cake consultation, corporate catering Johannesburg">
+
+  <meta name="author"  content="EMT Bakery">
+  <meta name="robots"  content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="Contact Us | EMT Bakery – Get in Touch">
+  <meta property="og:description" content="Reach out to EMT Bakery for custom orders, wedding cake consultations, or corporate catering enquiries.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za/contact.html">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>Contact Us | EMT Bakery – Get in Touch</title>
+
+  <link rel="canonical" href="https://www.emtbakery.co.za/contact.html">
+  <link rel="icon"      href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png"
+             alt="EMT Bakery logo"
+             width="150" height="60"
+             loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header role="banner" class="page-header">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list">
+        <li><a href="index.html">Home</a></li>
+        <li aria-hidden="true" class="separator">&rsaquo;</li>
+        <li><span aria-current="page">Contact</span></li>
+      </ol>
+    </nav>
+    <h1>Get in Touch</h1>
+    <p class="page-subheading">
+      We would love to hear from you. We respond to all enquiries within one business day.
+    </p>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- Two-column layout: Form on left, business info on right -->
+    <div class="contact-layout">
+
+      <!-- ── COLUMN 1: CONTACT FORM ─────────────────────────────── -->
+      <section aria-labelledby="contact-form-heading" class="contact-form-section">
+
+        <h2 id="contact-form-heading">Send Us a Message</h2>
+
+        <!--
+          method="POST": Always use POST for forms that submit personal data.
+          GET appends data to the URL, making it visible in browser history
+          and server logs – a privacy and security risk.
+
+          action="contact-handler.php": The server-side script that
+          processes the form data. Will be built in Phase 2.
+
+          novalidate is intentionally omitted so browser-native
+          HTML5 validation is active. JavaScript-enhanced validation
+          will be layered on top in Phase 2.
+        -->
+        <form action="contact-handler.php"
+              method="POST"
+              class="contact-form"
+              aria-label="Contact enquiry form">
+
+          <!-- ── FIELDSET 1: Personal Details ──────────────────────
+            <fieldset> groups related form fields.
+            <legend> provides the accessible name/label for the group.
+            This is a WCAG 1.3.1 requirement for grouped form controls.
+          -->
+          <fieldset>
+            <legend>Your Details</legend>
+
+            <!--
+              Full Name field.
+              autocomplete="name" helps browsers pre-fill the field
+              using saved data (WCAG 1.3.5 – Identify Input Purpose).
+            -->
+            <div class="form-group">
+              <label for="full-name">
+                Full Name <span aria-label="required" class="required-marker">*</span>
+              </label>
+              <input type="text"
+                     id="full-name"
+                     name="full_name"
+                     placeholder="e.g. Jane Smith"
+                     required
+                     autocomplete="name"
+                     aria-required="true"
+                     aria-describedby="name-hint">
+              <p id="name-hint" class="form-hint">Please enter your first and last name.</p>
+            </div>
+
+            <!--
+              Email field.
+              type="email" enables browser-native email validation
+              and shows an email-specific keyboard on mobile devices.
+            -->
+            <div class="form-group">
+              <label for="contact-email">
+                Email Address <span aria-label="required" class="required-marker">*</span>
+              </label>
+              <input type="email"
+                     id="contact-email"
+                     name="email"
+                     placeholder="e.g. jane@example.com"
+                     required
+                     autocomplete="email"
+                     aria-required="true"
+                     aria-describedby="email-hint">
+              <p id="email-hint" class="form-hint">We will use this address to reply to your enquiry.</p>
+            </div>
+
+            <!--
+              Phone field.
+              type="tel" shows a numeric keypad on mobile devices.
+              Not marked required – phone is optional.
+            -->
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel"
+                     id="phone"
+                     name="phone"
+                     placeholder="e.g. +27 82 000 0000"
+                     autocomplete="tel"
+                     aria-describedby="phone-hint">
+              <p id="phone-hint" class="form-hint">Optional. Include country code for international numbers.</p>
+            </div>
+
+          </fieldset><!-- /fieldset: Your Details -->
+
+
+          <!-- ── FIELDSET 2: Enquiry Details ────────────────────────
+            A second fieldset groups the enquiry-specific fields,
+            separating them clearly from personal details.
+          -->
+          <fieldset>
+            <legend>Your Enquiry</legend>
+
+            <!--
+              Enquiry Type dropdown.
+              <select> with a disabled default option follows
+              the best-practice pattern for required selects:
+              the default "Please select" option acts as a
+              placeholder but cannot be submitted.
+            -->
+            <div class="form-group">
+              <label for="enquiry-type">
+                Enquiry Type <span aria-label="required" class="required-marker">*</span>
+              </label>
+              <select id="enquiry-type"
+                      name="enquiry_type"
+                      required
+                      aria-required="true">
+                <option value="" disabled selected>Please select an option...</option>
+                <option value="general">General Enquiry</option>
+                <option value="custom-cake">Custom Cake Order</option>
+                <option value="wedding-cake">Wedding Cake Consultation</option>
+                <option value="corporate">Corporate / Bulk Order</option>
+                <option value="delivery">Delivery Enquiry</option>
+                <option value="feedback">Feedback or Compliment</option>
+              </select>
+            </div>
+
+            <!--
+              Event Date field – relevant for wedding/event cake orders.
+              type="date" shows a date picker on modern browsers.
+              Not required as it only applies to certain enquiry types.
+            -->
+            <div class="form-group">
+              <label for="event-date">Event Date (if applicable)</label>
+              <input type="date"
+                     id="event-date"
+                     name="event_date"
+                     aria-describedby="date-hint">
+              <p id="date-hint" class="form-hint">
+                For wedding or event orders, please include your event date
+                so we can check availability. We require at least 4 weeks&apos; notice.
+              </p>
+            </div>
+
+            <!--
+              Number of Guests field – relevant for corporate/event orders.
+              type="number" with min/max constrains input to valid ranges.
+            -->
+            <div class="form-group">
+              <label for="guest-count">Approximate Guest / Serving Count</label>
+              <input type="number"
+                     id="guest-count"
+                     name="guest_count"
+                     min="1"
+                     max="5000"
+                     placeholder="e.g. 50"
+                     aria-describedby="guest-hint">
+              <p id="guest-hint" class="form-hint">For bulk/corporate orders, enter the number of servings required.</p>
+            </div>
+
+            <!--
+              Message textarea.
+              rows="6" sets the initial visible height.
+              maxlength sets a character limit.
+              aria-describedby links the hint to the field.
+            -->
+            <div class="form-group">
+              <label for="message">
+                Message <span aria-label="required" class="required-marker">*</span>
+              </label>
+              <textarea id="message"
+                        name="message"
+                        rows="6"
+                        maxlength="2000"
+                        placeholder="Please describe your enquiry in as much detail as possible..."
+                        required
+                        aria-required="true"
+                        aria-describedby="message-hint"></textarea>
+              <p id="message-hint" class="form-hint">
+                Maximum 2 000 characters. For cake orders, please describe the theme,
+                flavours, and any design references you have.
+              </p>
+            </div>
+
+          </fieldset><!-- /fieldset: Your Enquiry -->
+
+
+          <!-- ── CONSENT CHECKBOX ───────────────────────────────────
+            POPIA (Protection of Personal Information Act) compliance
+            requires explicit consent before processing personal data.
+          -->
+          <div class="form-group form-group--checkbox">
+            <input type="checkbox"
+                   id="consent"
+                   name="consent"
+                   value="yes"
+                   required
+                   aria-required="true"
+                   aria-describedby="consent-desc">
+            <label for="consent">
+              I consent to EMT Bakery processing my personal information
+              to respond to this enquiry, in accordance with the
+              <a href="privacy.html" target="_blank" rel="noopener noreferrer">
+                Privacy Policy
+              </a>.
+              <span aria-label="required" class="required-marker">*</span>
+            </label>
+            <p id="consent-desc" class="form-hint">
+              Required. Your data will only be used to respond to your enquiry.
+            </p>
+          </div>
+
+          <!-- Required fields notice -->
+          <p class="required-note">
+            <span class="required-marker" aria-hidden="true">*</span>
+            Fields marked with an asterisk are required.
+          </p>
+
+          <button type="submit" class="btn btn-primary">
+            Send Message
+          </button>
+
+        </form><!-- /.contact-form -->
+
+      </section><!-- /.contact-form-section -->
+
+
+      <!-- ── COLUMN 2: BUSINESS INFO & MAP ────────────────────────── -->
+      <aside aria-label="Business contact information and location" class="contact-info-sidebar">
+
+        <!-- ──────────────────────────────────────────────────────────
+          <aside> is used here because this content is supplementary
+          to the main contact form. It provides related but separate
+          information (address, hours, map).
+        ────────────────────────────────────────────────────────────── -->
+
+        <section aria-labelledby="find-us-heading">
+          <h2 id="find-us-heading">Find Us</h2>
+
+          <!--
+            <address> is the semantically correct element for
+            contact information associated with the site/business owner.
+          -->
+          <address class="business-address">
+            <p>
+              <strong>EMT Bakery</strong><br>
+              14 Heritage Road<br>
+              Johannesburg, Gauteng, 2001<br>
+              South Africa
+            </p>
+            <p>
+              <strong>Tel:</strong>
+              <a href="tel:+27110001234">+27 11 000 1234</a>
+            </p>
+            <p>
+              <strong>WhatsApp:</strong>
+              <a href="https://wa.me/27820001234"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Chat on WhatsApp (opens in new tab)">
+                +27 82 000 0000
+              </a>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a>
+            </p>
+          </address>
+        </section>
+
+        <section aria-labelledby="hours-heading" class="trading-hours">
+          <h2 id="hours-heading">Trading Hours</h2>
+          <!--
+            <table> is the correct element for tabular data
+            (days vs times). Using a table here is semantically
+            appropriate and better than a definition list for
+            this kind of structured schedule.
+          -->
+          <table>
+            <caption class="sr-only">EMT Bakery trading hours by day</caption>
+            <!--
+              sr-only: A common CSS utility class that visually hides
+              content while keeping it accessible to screen readers.
+              The <caption> provides context for the table.
+            -->
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday – Friday</td>
+                <td>07:00 – 18:00</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>07:00 – 14:00</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>Closed</td>
+              </tr>
+              <tr>
+                <td>Public Holidays</td>
+                <td>07:00 – 12:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Google Maps embed placeholder (Phase 2) -->
+        <section aria-labelledby="map-heading" class="map-section">
+          <h2 id="map-heading">Map &amp; Directions</h2>
+          <p>
+            We are located on Heritage Road in central Johannesburg,
+            with ample street parking available. Public transport
+            stops within 200 metres of our entrance.
+          </p>
+          <!--
+            The Google Maps iframe will be embedded in Phase 2.
+            A placeholder element is created here so the layout
+            is accounted for in wireframe planning.
+            role="img" and aria-label describe the map region
+            to screen readers.
+          -->
+          <div class="map-placeholder"
+               role="img"
+               aria-label="Map placeholder – Google Maps will be embedded here in Phase 2">
+            <p>[Google Maps Embed – Phase 2]</p>
+          </div>
+        </section>
+
+      </aside><!-- /.contact-info-sidebar -->
+
+    </div><!-- /.contact-layout -->
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER (consistent across all pages)
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="images/logo-white.png"
+             alt="EMT Bakery logo"
+             width="120" height="48"
+             loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat with EMT Bakery on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        <small>
+          &copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved.
+          | <a href="privacy.html">Privacy Policy</a>
+          | <a href="terms.html">Terms &amp; Conditions</a>
+        </small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

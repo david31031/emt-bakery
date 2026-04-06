@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : about.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : About Us
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 About Us page shell.
+                Covers the bakery's history, mission,
+                core values, and team introductions.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--
+    Unique description per page: This page focuses on brand story
+    and trust-building keywords ("local", "Johannesburg", "artisan").
+  -->
+  <meta name="description"
+        content="Learn about EMT Bakery – our story, our bakers, and our commitment to quality artisan baking in Johannesburg since 2015.">
+
+  <meta name="keywords"
+        content="about EMT Bakery, bakery Johannesburg history, artisan bakers, local bakery story, fresh bread Johannesburg">
+
+  <meta name="author"  content="EMT Bakery">
+  <meta name="robots"  content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="About Us | EMT Bakery – Our Story &amp; Team">
+  <meta property="og:description" content="Meet the passionate bakers behind EMT Bakery and discover our journey from home kitchen to Johannesburg favourite.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za/about.html">
+  <meta property="og:image"       content="https://www.emtbakery.co.za/images/founders.jpg">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>About Us | EMT Bakery – Our Story &amp; Team</title>
+
+  <link rel="canonical" href="https://www.emtbakery.co.za/about.html">
+  <link rel="icon"      href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================================================
+       NAVIGATION
+       aria-current="page" is placed on the About Us link because
+       this is the active page. All other links have no aria-current.
+       ============================================================ -->
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png"
+             alt="EMT Bakery logo"
+             width="150"
+             height="60"
+             loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html" aria-current="page">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       On inner pages, the <header> serves as a page banner
+       with the page title and a breadcrumb trail.
+       ============================================================ -->
+  <header role="banner" class="page-header">
+    <!--
+      Breadcrumb navigation: Helps users understand their location
+      within the website hierarchy. Also improves SEO by
+      generating breadcrumb rich snippets in Google results.
+      aria-label="Breadcrumb" identifies it as a breadcrumb nav.
+    -->
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list">
+        <li><a href="index.html">Home</a></li>
+        <!--
+          aria-hidden="true" on the separator means screen readers
+          skip the decorative chevron character.
+        -->
+        <li aria-hidden="true" class="separator">&rsaquo;</li>
+        <!--
+          aria-current="page" on the last breadcrumb item identifies
+          the current page within the breadcrumb trail.
+        -->
+        <li><span aria-current="page">About Us</span></li>
+      </ol>
+    </nav>
+    <h1>Our Story</h1>
+    <p class="page-subheading">
+      From a home kitchen to Johannesburg's most trusted artisan bakery.
+    </p>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ── SECTION 1: HISTORY ──────────────────────────────────── -->
+    <section aria-labelledby="history-heading" class="about-section">
+
+      <h2 id="history-heading">How We Started</h2>
+
+      <!--
+        <figure> and <figcaption> are the correct semantic pair
+        for images with captions. The figcaption supplements the
+        alt text and provides visible context for all users.
+      -->
+      <figure class="about-figure">
+        <img src="images/founders.jpg"
+             alt="The three founders of EMT Bakery – Esi, Mpho, and Tumi – smiling together in their commercial kitchen"
+             width="700"
+             height="450"
+             loading="lazy">
+        <figcaption>
+          Esi, Mpho, and Tumi – the founders of EMT Bakery – in their Johannesburg kitchen, 2015.
+        </figcaption>
+      </figure>
+
+      <p>
+        EMT Bakery was founded in 2015 by three lifelong friends – Esi, Mpho, and Tumi –
+        united by a shared passion for baking and a belief that truly great bread could
+        strengthen a community. The name &ldquo;EMT&rdquo; is drawn from the first initial
+        of each founder, a constant reminder that the bakery is built on friendship,
+        trust, and shared purpose.
+      </p>
+      <p>
+        What began as weekend baking sessions in a home kitchen quickly attracted
+        attention at local Johannesburg markets. Customers kept returning – not just
+        for the bread, but for the experience of knowing exactly who baked it and
+        where the ingredients came from. Within eighteen months, demand outgrew
+        the home kitchen, and the trio invested in a full commercial bakery space
+        in the heart of Johannesburg.
+      </p>
+      <p>
+        Today, EMT Bakery produces over 200 individual baked items per week, serving
+        walk-in retail customers, repeat corporate clients, and couples commissioning
+        bespoke wedding cakes. Despite the growth, the founders remain hands-on in
+        the kitchen every day – because for EMT Bakery, baking will always be personal.
+      </p>
+
+    </section><!-- /.about-section -->
+
+
+    <!-- ── SECTION 2: MISSION & VALUES ─────────────────────────── -->
+    <section aria-labelledby="mission-heading" class="mission-section">
+
+      <h2 id="mission-heading">Our Mission &amp; Core Values</h2>
+
+      <!--
+        <blockquote> is the semantically correct element for
+        an extended quotation. The mission statement is a formal
+        declaration that warrants this treatment.
+      -->
+      <blockquote class="mission-statement">
+        <p>
+          &ldquo;To nourish and delight every customer through the art of traditional
+          baking – using only the finest locally sourced ingredients, delivered with
+          warmth, consistency, and genuine care.&rdquo;
+        </p>
+        <footer>
+          <cite>– EMT Bakery Mission Statement</cite>
+        </footer>
+      </blockquote>
+
+      <!--
+        <dl> (Description List) is the correct semantic structure for
+        term-definition pairs such as values and their explanations.
+        It is more appropriate here than <ul> because each value
+        has a corresponding definition.
+      -->
+      <dl class="values-list">
+
+        <dt>Quality</dt>
+        <dd>
+          We use only premium, locally sourced South African ingredients.
+          Every recipe is tested rigorously before it reaches our shelves.
+          We would never serve anything we would not proudly serve our own families.
+        </dd>
+
+        <dt>Community</dt>
+        <dd>
+          We partner with local farms, source from South African suppliers,
+          and actively participate in our neighbourhood. A portion of our weekly
+          baked surplus is donated to community food programmes in Johannesburg.
+        </dd>
+
+        <dt>Freshness</dt>
+        <dd>
+          Every single product is baked on the day it is sold or delivered.
+          We never freeze, pre-bake, or use preservatives. If it is not fresh,
+          it does not leave our kitchen.
+        </dd>
+
+        <dt>Inclusivity</dt>
+        <dd>
+          We believe everyone deserves great baked goods. We offer
+          gluten-free, vegan, sugar-free, and halal-certified options,
+          and we are always willing to accommodate special dietary requirements
+          with advance notice.
+        </dd>
+
+        <dt>Craftsmanship</dt>
+        <dd>
+          Our bakers combine time-honoured techniques with modern innovation.
+          Every loaf, every tier, every decoration is considered and intentional.
+          We take enormous pride in the work that leaves our kitchen.
+        </dd>
+
+      </dl>
+
+    </section><!-- /.mission-section -->
+
+
+    <!-- ── SECTION 3: MEET THE TEAM ─────────────────────────────── -->
+    <section aria-labelledby="team-heading" class="team-section">
+
+      <h2 id="team-heading">Meet the Bakers</h2>
+
+      <p class="section-intro">
+        Behind every exceptional loaf and every beautifully decorated cake
+        is a dedicated team of passionate professionals.
+      </p>
+
+      <!--
+        Each team member is an <article> – a self-contained,
+        independently reusable piece of content.
+      -->
+
+      <article class="team-card" aria-labelledby="baker-esi">
+        <img src="images/baker-esi.jpg"
+             alt="Esi, Head Baker and Co-Founder, holding a freshly baked sourdough loaf"
+             width="300"
+             height="300"
+             loading="lazy">
+        <div class="team-card-content">
+          <h3 id="baker-esi">Esi – Co-Founder &amp; Head Baker</h3>
+          <p>
+            With over 14 years of artisan baking experience, Esi leads all bread production
+            at EMT Bakery. She trained under a master baker in Cape Town before returning
+            to Johannesburg to co-found EMT. Her sourdough programme is the backbone of
+            the bakery's identity.
+          </p>
+        </div>
+      </article>
+
+      <article class="team-card" aria-labelledby="baker-mpho">
+        <img src="images/baker-mpho.jpg"
+             alt="Mpho, Lead Cake Designer and Co-Founder, decorating a tiered wedding cake"
+             width="300"
+             height="300"
+             loading="lazy">
+        <div class="team-card-content">
+          <h3 id="baker-mpho">Mpho – Co-Founder &amp; Lead Cake Designer</h3>
+          <p>
+            Mpho is the creative force behind every custom and wedding cake at EMT Bakery.
+            A self-taught cake artist with a background in visual design, Mpho brings an
+            extraordinary eye for colour, proportion, and detail to every tier she creates.
+          </p>
+        </div>
+      </article>
+
+      <article class="team-card" aria-labelledby="baker-tumi">
+        <img src="images/baker-tumi.jpg"
+             alt="Tumi, Operations Director and Co-Founder, overseeing morning production in the bakery"
+             width="300"
+             height="300"
+             loading="lazy">
+        <div class="team-card-content">
+          <h3 id="baker-tumi">Tumi – Co-Founder &amp; Operations Director</h3>
+          <p>
+            Tumi ensures that every order is fulfilled on time, every client is delighted,
+            and the bakery runs like clockwork. With a background in hospitality management,
+            she bridges the worlds of food craft and business – keeping EMT Bakery
+            professional, reliable, and growing.
+          </p>
+        </div>
+      </article>
+
+    </section><!-- /.team-section -->
+
+
+    <!-- ── SECTION 4: CALL TO ACTION ───────────────────────────── -->
+    <section aria-labelledby="cta-about-heading" class="cta-section">
+      <h2 id="cta-about-heading">Ready to Experience EMT Bakery?</h2>
+      <p>Explore our products, browse our gallery, or place an order today.</p>
+      <a href="products.html" class="btn btn-primary" role="button">
+        View Our Products
+      </a>
+      <a href="contact.html" class="btn btn-secondary" role="button">
+        Get in Touch
+      </a>
+    </section>
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER (consistent across all pages)
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="images/logo-white.png"
+             alt="EMT Bakery logo"
+             width="120"
+             height="48"
+             loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat with EMT Bakery on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <div class="footer-bottom">
+      <p>
+        <small>
+          &copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved.
+          | <a href="privacy.html">Privacy Policy</a>
+          | <a href="terms.html">Terms &amp; Conditions</a>
+        </small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>

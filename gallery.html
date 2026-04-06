@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : gallery.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Gallery
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 Gallery page shell.
+                Showcases past work organised by category.
+                Uses <figure>/<figcaption> for all gallery
+                images. Lightbox functionality will be
+                added in Phase 2 via JavaScript.
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description"
+        content="Browse the EMT Bakery gallery – beautiful photos of our artisan breads, custom cakes, wedding cakes, and corporate catering work in Johannesburg.">
+
+  <meta name="keywords"
+        content="bakery gallery, custom cake photos, wedding cake photos, artisan bread Johannesburg, cake design inspiration, EMT Bakery work">
+
+  <meta name="author"  content="EMT Bakery">
+  <meta name="robots"  content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="Gallery | EMT Bakery – Our Work in Pictures">
+  <meta property="og:description" content="View photos of our custom cakes, artisan breads, wedding cakes, and corporate catering from EMT Bakery Johannesburg.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za/gallery.html">
+  <meta property="og:image"       content="https://www.emtbakery.co.za/images/gallery/wedding-01.jpg">
+  <meta property="og:locale"      content="en_ZA">
+
+  <title>Gallery | EMT Bakery – Our Work in Pictures</title>
+
+  <link rel="canonical" href="https://www.emtbakery.co.za/gallery.html">
+  <link rel="icon"      href="favicon.ico" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png" alt="EMT Bakery logo" width="150" height="60" loading="eager">
+      </a>
+    </div>
+    <ul role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header role="banner" class="page-header">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol role="list">
+        <li><a href="index.html">Home</a></li>
+        <li aria-hidden="true" class="separator">&rsaquo;</li>
+        <li><span aria-current="page">Gallery</span></li>
+      </ol>
+    </nav>
+    <h1>Our Work</h1>
+    <p class="page-subheading">
+      A showcase of the breads, cakes, and creations that have left our kitchen.
+      Every piece tells a story.
+    </p>
+  </header>
+
+  <main id="main-content" role="main">
+
+    <!-- ── GALLERY FILTER NAVIGATION ─────────────────────────────────
+      Allows users to navigate to specific gallery categories.
+      JavaScript in Phase 2 will make these filter the grid
+      dynamically. For now they serve as in-page anchor links.
+    -->
+    <nav aria-label="Gallery Category Filter" class="gallery-filter-nav">
+      <ul role="list">
+        <li><a href="#gallery-all">All Work</a></li>
+        <li><a href="#gallery-breads">Breads &amp; Pastries</a></li>
+        <li><a href="#gallery-cakes">Custom Cakes</a></li>
+        <li><a href="#gallery-weddings">Weddings</a></li>
+        <li><a href="#gallery-events">Corporate Events</a></li>
+      </ul>
+    </nav>
+
+    <!-- ── GALLERY GRID ──────────────────────────────────────────────
+      Each gallery item is a <figure> with a <figcaption>.
+      This is the semantically correct HTML5 structure for
+      images with visible captions.
+
+      data-category attributes will be used by the JavaScript
+      filter in Phase 2 to show/hide items by category.
+
+      The gallery items are wrapped in a <section> for the
+      complete collection, and each category is a sub-section.
+    -->
+
+    <section id="gallery-all" aria-labelledby="gallery-heading" class="gallery-section">
+
+      <h2 id="gallery-heading" class="sr-only">Full Gallery</h2>
+      <!--
+        sr-only: Visually hidden heading that still provides
+        screen reader context for the gallery section landmark.
+      -->
+
+      <!-- ── CATEGORY: BREADS & PASTRIES ─────────────────────────── -->
+      <section id="gallery-breads" aria-labelledby="breads-gallery-heading" class="gallery-category">
+
+        <h3 id="breads-gallery-heading">Breads &amp; Pastries</h3>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item" data-category="breads">
+            <!--
+              All gallery images use loading="lazy" because they are
+              below the fold. This defers loading until the image
+              is near the viewport, improving page performance.
+            -->
+            <img src="images/gallery/bread-01.jpg"
+                 alt="Fresh sourdough loaves arranged on a reclaimed-wood bakery shelf, scored with decorative leaf patterns"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Signature sourdough collection – scored leaf patterns baked daily.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="breads">
+            <img src="images/gallery/bread-02.jpg"
+                 alt="Golden butter croissants cooling on a wire rack, light reflecting off their flaky layers"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Classic French butter croissants – 72 layers of flaky perfection.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="breads">
+            <img src="images/gallery/bread-03.jpg"
+                 alt="A sliced dark rye loaf revealing a dense, moist crumb with visible caraway seeds"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Dark rye with caraway – available every Wednesday and Saturday.
+            </figcaption>
+          </figure>
+
+        </div><!-- /.gallery-grid -->
+
+      </section><!-- /#gallery-breads -->
+
+
+      <!-- ── CATEGORY: CUSTOM CAKES ──────────────────────────────── -->
+      <section id="gallery-cakes" aria-labelledby="cakes-gallery-heading" class="gallery-category">
+
+        <h3 id="cakes-gallery-heading">Custom Cakes</h3>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item" data-category="cakes">
+            <img src="images/gallery/cake-01.jpg"
+                 alt="A four-tier birthday cake decorated with hand-painted watercolour florals in pink and gold"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Hand-painted watercolour floral birthday cake – February 2026.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="cakes">
+            <img src="images/gallery/cake-02.jpg"
+                 alt="A sleek black-and-gold corporate birthday cake with an edible company logo on the top tier"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Corporate milestone cake with edible logo print – 50 portions.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="cakes">
+            <img src="images/gallery/cake-03.jpg"
+                 alt="A gender-reveal cake cut open to reveal pink interior sponge, surrounded by pink and gold decorations"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Gender reveal cake – pink interior reveal with gold buttercream exterior.
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section><!-- /#gallery-cakes -->
+
+
+      <!-- ── CATEGORY: WEDDINGS ───────────────────────────────────── -->
+      <section id="gallery-weddings" aria-labelledby="weddings-gallery-heading" class="gallery-category">
+
+        <h3 id="weddings-gallery-heading">Wedding Cakes</h3>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item" data-category="weddings">
+            <img src="images/gallery/wedding-01.jpg"
+                 alt="A five-tier white fondant wedding cake with cascading ivory roses, set up at a reception venue"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Classic five-tier ivory fondant with cascading roses – Sandton, March 2026.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="weddings">
+            <img src="images/gallery/wedding-02.jpg"
+                 alt="A modern minimalist two-tier wedding cake with textured buttercream and dried pampas grass"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Boho-minimalist two-tier with textured buttercream and pampas grass.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="weddings">
+            <img src="images/gallery/wedding-03.jpg"
+                 alt="A dramatic black wedding cake with gold leaf detail and deep red floral accents"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Dramatic black fondant with 24-karat gold leaf – Johannesburg, January 2026.
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section><!-- /#gallery-weddings -->
+
+
+      <!-- ── CATEGORY: CORPORATE EVENTS ─────────────────────────── -->
+      <section id="gallery-events" aria-labelledby="events-gallery-heading" class="gallery-category">
+
+        <h3 id="events-gallery-heading">Corporate &amp; Events</h3>
+
+        <div class="gallery-grid">
+
+          <figure class="gallery-item" data-category="events">
+            <img src="images/gallery/event-01.jpg"
+                 alt="A professionally arranged catering display of pastries, breads, and petit fours for a 200-person product launch"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Product launch catering – pastry &amp; bread spread for 200 guests.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-category="events">
+            <img src="images/gallery/event-02.jpg"
+                 alt="Individually boxed croissant and muffin gift sets with branded ribbon for a corporate client"
+                 width="600" height="450"
+                 loading="lazy">
+            <figcaption>
+              Branded corporate gift boxes – fully customisable with your company branding.
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </section><!-- /#gallery-events -->
+
+    </section><!-- /#gallery-all -->
+
+
+    <!-- ── CALL TO ACTION ─────────────────────────────────────────── -->
+    <section aria-labelledby="gallery-cta-heading" class="cta-section">
+      <h2 id="gallery-cta-heading">Inspired by What You See?</h2>
+      <p>
+        Place an order online or get in touch to discuss your custom creation.
+      </p>
+      <a href="order.html"   class="btn btn-primary"   role="button">Order Online</a>
+      <a href="contact.html" class="btn btn-secondary" role="button">Enquire About Custom Work</a>
+    </section>
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER (consistent across all pages)
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-white.png" alt="EMT Bakery logo" width="120" height="48" loading="lazy">
+        <p>Baked with love in Johannesburg since 2015.</p>
+      </div>
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <address>
+          <p>14 Heritage Road, Johannesburg, 2001</p>
+          <p>Tel: <a href="tel:+27110001234">+27 11 000 1234</a></p>
+          <p>Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a></p>
+        </address>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li><a href="https://www.instagram.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Instagram (opens in new tab)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/emtbakery" target="_blank" rel="noopener noreferrer" aria-label="Follow EMT Bakery on Facebook (opens in new tab)">Facebook</a></li>
+          <li><a href="https://wa.me/27820001234" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><small>&copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a></small></p>
+    </div>
+  </footer>
+
+  <!-- <script src="js/main.js"></script> -->
+  <!-- <script src="js/gallery.js"></script> -->
+
+</body>
+</html>

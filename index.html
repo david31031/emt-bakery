@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FILE        : index.html
+  PROJECT     : EMT Bakery – Official Website
+  PAGE        : Home (Entry Point)
+  AUTHOR      : [Student Name] | IIE Rosebank College
+  MODULE      : WEDE5020 – Web Development
+  DATE        : April 2026
+  DESCRIPTION : Semantic HTML5 home page skeleton.
+                No CSS or JavaScript applied in Part One.
+                All structural, SEO, and accessibility
+                foundations are laid here for Phase 2.
+  ============================================================
+-->
+
+<!--
+  WHY lang="en"?
+  The lang attribute on <html> is a WCAG 3.1.1 requirement.
+  It tells screen readers which language to use for pronunciation,
+  and helps search engines correctly index the content.
+-->
+<html lang="en">
+
+<!-- ============================================================
+     HEAD SECTION
+     Contains all metadata – none of this is visible on screen
+     but it is critical for SEO, browser rendering, and
+     social-media sharing (Open Graph).
+     ============================================================ -->
+<head>
+
+  <!--
+    charset="UTF-8": Supports all characters including
+    accented letters, special symbols, and emoji.
+    Must be the FIRST element inside <head>.
+  -->
+  <meta charset="UTF-8">
+
+  <!--
+    viewport meta tag: Required for responsive/mobile-first design.
+    width=device-width  → use the device's actual screen width
+    initial-scale=1.0   → do not zoom in or out on load
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    http-equiv="X-UA-Compatible": Forces Internet Explorer (if used)
+    to render with the latest engine. Prevents legacy rendering bugs.
+  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- ── PRIMARY SEO META TAGS ───────────────────────────────────
+    The description must be between 120–160 characters.
+    It appears as the snippet in Google search results.
+    Keywords are less critical for modern SEO but still included
+    for completeness and some niche search engines.
+  -->
+  <meta name="description"
+        content="EMT Bakery – artisan fresh bread, custom birthday cakes and elegant wedding cakes in Johannesburg. Order online for delivery or collection.">
+
+  <meta name="keywords"
+        content="fresh bread, custom cakes, wedding cakes, birthday cakes, artisan bakery, Johannesburg bakery, order cake online, sourdough bread, corporate catering">
+
+  <meta name="author" content="EMT Bakery">
+
+  <!--
+    robots meta tag: Instructs search engine crawlers.
+    index  → include this page in search results
+    follow → follow all links on this page
+  -->
+  <meta name="robots" content="index, follow">
+
+  <!-- ── OPEN GRAPH META TAGS ────────────────────────────────────
+    Open Graph (og:) tags control how the page appears when
+    shared on Facebook, LinkedIn, WhatsApp, and other platforms.
+    Without these, social platforms show generic previews.
+  -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="EMT Bakery">
+  <meta property="og:title"       content="EMT Bakery | Fresh Bread &amp; Custom Cakes – Johannesburg">
+  <meta property="og:description" content="Handcrafted artisan baked goods for every occasion. Order online today.">
+  <meta property="og:url"         content="https://www.emtbakery.co.za">
+  <meta property="og:image"       content="https://www.emtbakery.co.za/images/og-hero.jpg">
+  <meta property="og:locale"      content="en_ZA">
+
+  <!-- ── PAGE TITLE ─────────────────────────────────────────────
+    The <title> appears in the browser tab and as the clickable
+    blue link in Google search results. Format: Page | Brand | Location.
+    Optimal length: 50–60 characters.
+  -->
+  <title>EMT Bakery | Fresh Bread &amp; Custom Cakes – Johannesburg</title>
+
+  <!--
+    canonical link: Prevents duplicate-content SEO penalties by
+    telling search engines which URL is the "official" version.
+  -->
+  <link rel="canonical" href="https://www.emtbakery.co.za/index.html">
+
+  <!--
+    favicon: The small icon shown in the browser tab and bookmarks.
+    Multiple sizes provided for different devices and contexts.
+  -->
+  <link rel="icon"             href="favicon.ico"              type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+
+  <!--
+    Stylesheet link – commented out for Part One (HTML skeleton only).
+    Will be activated in Phase 2.
+  -->
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+</head>
+
+<!-- ============================================================
+     BODY SECTION
+     All visible page content lives here.
+     ARIA landmark roles (role="...") are added to major
+     structural elements so assistive technologies can
+     navigate the page by region – a WCAG 2.1 requirement.
+     ============================================================ -->
+<body>
+
+  <!-- ── SKIP NAVIGATION LINK ────────────────────────────────────
+    A "skip link" is a WCAG 2.4.1 best practice.
+    It is visually hidden but becomes visible on keyboard focus.
+    It allows keyboard and screen-reader users to bypass the
+    navigation menu and jump directly to the main content.
+    The href targets id="main-content" on the <main> element.
+  -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================================================
+       NAVIGATION
+       <nav> is an HTML5 semantic landmark element.
+       role="navigation" is redundant but added for maximum
+       compatibility with older assistive technologies.
+       aria-label distinguishes this nav from the footer nav
+       when a screen reader lists page landmarks.
+       ============================================================ -->
+  <nav role="navigation" aria-label="Primary Navigation">
+
+    <!-- Brand logo inside nav for consistent placement -->
+    <div class="nav-brand">
+      <a href="index.html" aria-label="EMT Bakery – return to home page">
+        <img src="images/logo.png"
+             alt="EMT Bakery logo"
+             width="150"
+             height="60"
+             loading="eager">
+        <!--
+          loading="eager" on the logo ensures it loads immediately
+          (above the fold). Images below the fold should use loading="lazy".
+        -->
+      </a>
+    </div>
+
+    <!-- Navigation links list -->
+    <ul role="list">
+      <!--
+        aria-current="page" marks the currently active page link.
+        Screen readers announce it as "current page" to orient users.
+      -->
+      <li><a href="index.html"   aria-current="page">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order Online</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- ============================================================
+       HEADER + HERO SECTION
+       <header> wraps the page's introductory/branding content.
+       role="banner" is the ARIA landmark for the site header –
+       it should appear only ONCE per page.
+
+       The HERO section is the full-width welcome area that is
+       the first thing a visitor sees. Its primary job is to
+       communicate the value proposition and drive the CTA click.
+       ============================================================ -->
+  <header role="banner">
+
+    <section aria-labelledby="hero-heading" class="hero-section">
+
+      <!--
+        Hero background image is placed as an <img> (not a CSS background)
+        for SEO and accessibility. Alt text describes the scene for
+        screen readers and for when the image fails to load.
+      -->
+      <img src="images/hero-banner.jpg"
+           alt="A display of freshly baked artisan breads and decorated cakes at EMT Bakery"
+           width="1920"
+           height="700"
+           loading="eager"
+           class="hero-image">
+
+      <div class="hero-content">
+
+        <!--
+          H1 is the most important SEO heading on the page.
+          There must be exactly ONE <h1> per page.
+          It contains the primary keyword ("artisan bakery Johannesburg").
+          id="hero-heading" links to the aria-labelledby on the section.
+        -->
+        <h1 id="hero-heading">
+          Johannesburg's Favourite Artisan Bakery
+        </h1>
+
+        <p class="hero-subheading">
+          Handcrafted breads, custom cakes &amp; elegant wedding creations –
+          baked fresh every single day.
+        </p>
+
+        <!--
+          Primary Call-To-Action (CTA).
+          role="button" communicates button behaviour to screen readers.
+          The text is descriptive – never use "Click Here".
+        -->
+        <a href="order.html" class="btn btn-primary" role="button">
+          Order Online Now
+        </a>
+
+        <!--
+          Secondary CTA – lower visual hierarchy.
+        -->
+        <a href="products.html" class="btn btn-secondary" role="button">
+          View Our Products
+        </a>
+
+      </div><!-- /.hero-content -->
+
+    </section><!-- /.hero-section -->
+
+  </header><!-- /header[role="banner"] -->
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       <main> must appear EXACTLY ONCE per page.
+       It contains the primary, unique content of the page.
+       role="main" is added for older assistive technology support.
+       id="main-content" is the target of the skip link above.
+       ============================================================ -->
+  <main id="main-content" role="main">
+
+
+    <!-- ── SECTION 1: FEATURED PRODUCTS ───────────────────────────
+      aria-labelledby links the section to its heading,
+      allowing screen readers to announce the section name
+      as users navigate by landmark.
+    -->
+    <section aria-labelledby="featured-heading" class="featured-section">
+
+      <h2 id="featured-heading">Our Featured Treats</h2>
+
+      <p class="section-intro">
+        Every item is made by hand using locally sourced, premium South African ingredients.
+        No preservatives. No shortcuts. Just exceptional baking.
+      </p>
+
+      <!--
+        Product Cards:
+        <article> is used for each product card because each card
+        represents a self-contained, independently meaningful item
+        (like a newspaper article). They could be syndicated individually.
+      -->
+
+      <!-- PRODUCT CARD 1 -->
+      <article class="product-card" aria-labelledby="product-sourdough">
+        <img src="images/sourdough.jpg"
+             alt="A golden, round sourdough loaf with a scored crust, fresh from the stone oven"
+             width="400"
+             height="300"
+             loading="lazy">
+        <!--
+          loading="lazy": Defers loading until the image is near the viewport.
+          Improves page load speed (Core Web Vitals – LCP).
+          Only use "eager" for above-the-fold/critical images.
+        -->
+        <div class="card-content">
+          <h3 id="product-sourdough">Classic Sourdough Loaf</h3>
+          <p>
+            72-hour slow-fermented sourdough, stone-baked to perfection.
+            Rich flavour, open crumb, and a crackling crust. Available daily.
+          </p>
+          <p class="price">From <strong>R 65</strong></p>
+          <a href="products.html#sourdough" class="btn btn-outline">
+            View Product
+          </a>
+        </div>
+      </article>
+
+      <!-- PRODUCT CARD 2 -->
+      <article class="product-card" aria-labelledby="product-custom-cake">
+        <img src="images/custom-cake.jpg"
+             alt="A three-tier custom birthday cake decorated with fresh seasonal flowers and gold leaf"
+             width="400"
+             height="300"
+             loading="lazy">
+        <div class="card-content">
+          <h3 id="product-custom-cake">Custom Celebration Cakes</h3>
+          <p>
+            Bespoke cakes designed for birthdays, corporate milestones, graduations,
+            and every celebration in between. Fully customisable in flavour,
+            size, and decoration.
+          </p>
+          <p class="price">From <strong>R 450</strong></p>
+          <a href="products.html#custom-cakes" class="btn btn-outline">
+            View Product
+          </a>
+        </div>
+      </article>
+
+      <!-- PRODUCT CARD 3 -->
+      <article class="product-card" aria-labelledby="product-wedding-cake">
+        <img src="images/wedding-cake.jpg"
+             alt="An elegant five-tier white fondant wedding cake adorned with white roses and eucalyptus"
+             width="400"
+             height="300"
+             loading="lazy">
+        <div class="card-content">
+          <h3 id="product-wedding-cake">Wedding Cakes</h3>
+          <p>
+            Your wedding cake should be as unforgettable as your day.
+            Each wedding cake is designed in a personal consultation and crafted
+            with meticulous attention to detail.
+          </p>
+          <p class="price">From <strong>R 2 500</strong></p>
+          <a href="products.html#wedding-cakes" class="btn btn-outline">
+            View Product
+          </a>
+        </div>
+      </article>
+
+      <!-- PRODUCT CARD 4 -->
+      <article class="product-card" aria-labelledby="product-corporate">
+        <img src="images/corporate-catering.jpg"
+             alt="A professionally arranged platter of assorted pastries and mini cakes for a corporate event"
+             width="400"
+             height="300"
+             loading="lazy">
+        <div class="card-content">
+          <h3 id="product-corporate">Corporate Catering</h3>
+          <p>
+            Impress clients and reward staff with premium baked goods for meetings,
+            product launches, and office events. Bulk orders welcome with advance notice.
+          </p>
+          <p class="price">Custom Pricing</p>
+          <a href="contact.html#corporate" class="btn btn-outline">
+            Get a Quote
+          </a>
+        </div>
+      </article>
+
+    </section><!-- /.featured-section -->
+
+
+    <!-- ── SECTION 2: WHY CHOOSE US ────────────────────────────────
+      This section builds trust and addresses customer objections.
+      Using <ul> is semantically correct for a list of benefits.
+    -->
+    <section aria-labelledby="why-heading" class="why-section">
+
+      <h2 id="why-heading">Why Choose EMT Bakery?</h2>
+
+      <ul class="benefits-list">
+        <li>
+          <!--
+            <strong> is used for semantic importance, not just visual boldness.
+            Screen readers may emphasise <strong> text.
+          -->
+          <strong>100% Locally Sourced Ingredients</strong> –
+          We partner with South African farms and suppliers to ensure
+          the freshest, highest-quality produce in every bake.
+        </li>
+        <li>
+          <strong>Dietary Options Available</strong> –
+          Gluten-free, vegan, sugar-free, and halal-certified products
+          available. Please enquire when ordering.
+        </li>
+        <li>
+          <strong>Same-Week Delivery</strong> –
+          Online orders placed before Wednesday are delivered or
+          ready for collection by Friday across greater Johannesburg.
+        </li>
+        <li>
+          <strong>Corporate &amp; Bulk Orders Welcome</strong> –
+          Dedicated account management for regular corporate clients.
+          Volume discounts apply on orders over R 1 500.
+        </li>
+        <li>
+          <strong>No Preservatives</strong> –
+          Every product is baked fresh on the day of delivery
+          or collection. We never freeze or pre-package our goods.
+        </li>
+        <li>
+          <strong>Custom Design Consultations</strong> –
+          Wedding and celebration cake clients receive a free
+          one-hour in-person design and tasting session.
+        </li>
+      </ul>
+
+    </section><!-- /.why-section -->
+
+
+    <!-- ── SECTION 3: TESTIMONIALS ─────────────────────────────────
+      Social proof builds credibility.
+      <blockquote> is the correct semantic element for quotations.
+      <cite> identifies the source of the quotation.
+    -->
+    <section aria-labelledby="testimonials-heading" class="testimonials-section">
+
+      <h2 id="testimonials-heading">What Our Customers Say</h2>
+
+      <blockquote cite="https://www.google.com/maps">
+        <p>
+          "The wedding cake EMT Bakery made for us was absolutely breathtaking.
+          Every guest asked about it – and it tasted even better than it looked.
+          I cannot recommend them highly enough."
+        </p>
+        <footer>
+          <!--
+            <cite> inside <blockquote><footer> is the HTML5-recommended
+            pattern for attributing a quotation source.
+          -->
+          <cite>– Naledi M., Wedding Client, March 2026</cite>
+        </footer>
+      </blockquote>
+
+      <blockquote cite="https://www.google.com/maps">
+        <p>
+          "We use EMT Bakery for all our company events. The quality is
+          consistently exceptional and the team is always professional
+          and reliable. Our go-to bakery for everything."
+        </p>
+        <footer>
+          <cite>– David K., Corporate Events Manager, January 2026</cite>
+        </footer>
+      </blockquote>
+
+      <blockquote cite="https://www.google.com/maps">
+        <p>
+          "The sourdough is the best I have had in Johannesburg – and I have tried
+          them all! Fresh every day, perfect texture, incredible flavour.
+          I order every single week."
+        </p>
+        <footer>
+          <cite>– Priya N., Regular Customer, February 2026</cite>
+        </footer>
+      </blockquote>
+
+    </section><!-- /.testimonials-section -->
+
+
+    <!-- ── SECTION 4: NEWSLETTER SIGN-UP ───────────────────────────
+      Building a mailing list is one of the secondary website goals.
+      The form is structured with proper accessibility from the start.
+      action will point to a server-side handler (Phase 2).
+    -->
+    <section aria-labelledby="newsletter-heading" class="newsletter-section">
+
+      <h2 id="newsletter-heading">Stay in the Loop</h2>
+
+      <p>
+        Subscribe for weekly specials, seasonal menus, new product launches,
+        and exclusive discounts – delivered straight to your inbox.
+      </p>
+
+      <!--
+        method="POST" is correct for forms that submit data.
+        GET should never be used for forms containing personal data
+        as it appends data to the URL (visible in browser history).
+        novalidate is removed here so the browser's built-in
+        validation applies before Phase 2 JS validation is added.
+      -->
+      <form action="subscribe.php"
+            method="POST"
+            aria-label="Newsletter subscription form"
+            class="newsletter-form">
+
+        <!--
+          Every input MUST have an associated <label>.
+          The for attribute must match the input's id exactly.
+          This is a WCAG 1.3.1 and 4.1.2 requirement.
+        -->
+        <label for="newsletter-email">Email Address</label>
+        <input type="email"
+               id="newsletter-email"
+               name="email"
+               placeholder="yourname@example.com"
+               required
+               autocomplete="email"
+               aria-required="true"
+               aria-describedby="newsletter-hint">
+
+        <!--
+          aria-describedby links this hint text to the input above,
+          so screen readers read the hint along with the field label.
+        -->
+        <p id="newsletter-hint" class="form-hint">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+
+        <button type="submit" class="btn btn-primary">
+          Subscribe Now
+        </button>
+
+      </form>
+
+    </section><!-- /.newsletter-section -->
+
+
+  </main><!-- /#main-content -->
+
+
+  <!-- ============================================================
+       FOOTER
+       <footer> with role="contentinfo" is the ARIA landmark for
+       page-level footer content. It should appear once per page.
+       Contains secondary navigation, contact details, and legal info.
+       ============================================================ -->
+  <footer role="contentinfo" class="site-footer">
+
+    <!-- Footer columns -->
+    <div class="footer-grid">
+
+      <!-- COLUMN 1: Brand & tagline -->
+      <div class="footer-brand">
+        <img src="images/logo-white.png"
+             alt="EMT Bakery logo"
+             width="120"
+             height="48"
+             loading="lazy">
+        <p>
+          Baked with love in Johannesburg since 2015.
+          Quality, freshness, and community in every loaf and layer.
+        </p>
+      </div>
+
+      <!-- COLUMN 2: Footer navigation -->
+      <div class="footer-nav">
+        <h3>Quick Links</h3>
+        <!--
+          A second <nav> in the footer is valid HTML5.
+          The aria-label distinguishes it from the primary nav
+          in the accessibility landmark list.
+        -->
+        <nav aria-label="Footer Navigation">
+          <ul role="list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- COLUMN 3: Contact information -->
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <!--
+          <address> is the semantically correct element for
+          contact information related to the nearest <article>
+          or <body> element. Do NOT use it for postal addresses
+          unrelated to the page owner.
+        -->
+        <address>
+          <p>
+            <strong>EMT Bakery</strong><br>
+            14 Heritage Road<br>
+            Johannesburg, Gauteng, 2001
+          </p>
+          <p>
+            Tel: <a href="tel:+27110001234">+27 11 000 1234</a>
+          </p>
+          <p>
+            Email: <a href="mailto:hello@emtbakery.co.za">hello@emtbakery.co.za</a>
+          </p>
+          <p>
+            Mon–Fri: 07:00–18:00<br>
+            Saturday: 07:00–14:00<br>
+            Sunday: Closed
+          </p>
+        </address>
+      </div>
+
+      <!-- COLUMN 4: Social media -->
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul role="list" class="social-links">
+          <li>
+            <!--
+              External links should always use rel="noopener noreferrer"
+              for security: prevents the new tab from accessing
+              window.opener (a known security vulnerability).
+              aria-label provides context because the link text alone
+              ("Instagram") may not be descriptive enough for screen readers.
+            -->
+            <a href="https://www.instagram.com/emtbakery"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Follow EMT Bakery on Instagram (opens in new tab)">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/emtbakery"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Follow EMT Bakery on Facebook (opens in new tab)">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/27820001234"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Chat with EMT Bakery on WhatsApp (opens in new tab)">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.footer-grid -->
+
+    <!-- Footer bottom bar -->
+    <div class="footer-bottom">
+      <p>
+        <!--
+          &copy; is the HTML entity for the copyright symbol ©.
+          Using entities prevents encoding issues across different
+          character sets.
+        -->
+        <small>
+          &copy; 2026 EMT Bakery (Pty) Ltd. All rights reserved.
+          | <a href="privacy.html">Privacy Policy</a>
+          | <a href="terms.html">Terms &amp; Conditions</a>
+        </small>
+      </p>
+    </div><!-- /.footer-bottom -->
+
+  </footer><!-- /footer[role="contentinfo"] -->
+
+
+  <!--
+    JavaScript links – commented out for Part One.
+    Placed at the BOTTOM of <body> (before </body>) so that
+    the HTML is fully parsed before scripts execute.
+    This prevents render-blocking and improves page load speed.
+  -->
+  <!-- <script src="js/main.js"></script> -->
+
+</body>
+</html>
