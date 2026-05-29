@@ -10,7 +10,7 @@
 
 ## 🌐 Live GitHub Repository
 
-> **Repository Link:** `https://github.com/[your-username]/emt-bakery`
+> **Repository Link:** `https://github.com/david31031/emt-bakery
 
 ---
 
@@ -73,22 +73,6 @@ emt-bakery/
 | README.md updated for Part 2 | ✅ |
 
 ---
-
-## 📸 Screenshots
-
-> Add screenshots of your site at Desktop (1440px), Tablet (768px), and Mobile (375px) widths here.
-
-**Desktop View:**
-![Desktop Screenshot](screenshots/desktop.png)
-
-**Tablet View (768px):**
-![Tablet Screenshot](screenshots/tablet.png)
-
-**Mobile View (375px):**
-![Mobile Screenshot](screenshots/mobile.png)
-
----
-
 ## 🔄 CHANGELOG
 
 All changes are recorded below per the assignment requirement to document edits made following Part 1 feedback, as well as Part 2 additions.
@@ -137,7 +121,6 @@ All changes are recorded below per the assignment requirement to document edits 
 ---
 
 ### [1.0.0] — Part 1 Release — HTML Structure
-**Date:** [Insert Part 1 Submission Date]
 
 #### ➕ Added
 - Semantic HTML5 structure for all pages (index, about, contact)
