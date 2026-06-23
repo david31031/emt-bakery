@@ -3,8 +3,8 @@
 **Module:** WEDE5020 – Web Development  
 **Institution:** IIE Rosebank College  
 **Student:** Guy Wa Mutamba | ST10500444
-**GitHub:** https://github.com/your-username/emt-bakery  
-**Live URL:** https://your-site.netlify.app
+**GitHub:** https://github.com/david31031/emt-bakery
+**Live URL:**https://david31031.github.io/emt-bakery/
 
 ---
 
