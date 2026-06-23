@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /enquiry-handler.php
+Disallow: /contact-handler.php
+Disallow: /order-handler.php
+Disallow: /subscribe.php
+Disallow: /order-confirmation.html
+Disallow: /admin/
+Crawl-delay: 1
+Sitemap: https://www.emtbakery.co.za/sitemap.xml

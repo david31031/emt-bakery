@@ -1,149 +1,130 @@
-# EMT Bakery — WEDE5020POE
+# EMT Bakery – Official Website
 
-**Module:** Web Development (WEDE5020)
-**Assignment:** Portfolio of Evidence (POE)
-**Student Name:** [Guy David Wa Mutamba ]
-**Student Number:** [ST10500444]
-**Institution:** The Independent Institute of Education (IIE) — Rosebank College
-
----
-
-## 🌐 Live GitHub Repository
-
-> **Repository Link:** `https://github.com/david31031/emt-bakery
+**Module:** WEDE5020 – Web Development  
+**Institution:** IIE Rosebank College  
+**Student:** Guy Wa Mutamba | ST10500444
+**GitHub:** https://github.com/your-username/emt-bakery  
+**Live URL:** https://your-site.netlify.app
 
 ---
 
-## 📁 Project Structure
+## Project Summary
+
+Professional, fully responsive website for **EMT Bakery** – an artisan bakery in Johannesburg serving fresh breads, custom cakes, wedding cakes, and corporate catering.
+
+| Part | Focus | Status |
+|------|-------|--------|
+| Part 1 | HTML5 Skeleton, Planning & SEO Foundation | ✅ Complete |
+| Part 2 | CSS Styling, Flexbox/Grid, Responsive Design | ✅ Complete |
+| Part 3 | Dynamic JS, Forms, Validation, SEO Files, Deployment | ✅ Complete |
+
+---
+
+## File Structure
 
 ```
 emt-bakery/
-│
-├── index.html          # Homepage — Hero, Products Gallery, About Preview
-├── about.html          # About Us — Story, Team, Values
-├── contact.html        # Order Inquiry / Contact Page
-├── products.html       # Full Menu Page (extend from index template)
-│
+├── index.html               ← Home page
+├── about.html               ← About Us
+├── contact.html             ← Contact (with live email preview)
+├── products.html            ← Dynamic product catalogue
+├── gallery.html             ← Photo gallery
+├── order.html               ← Online order system
+├── order-confirmation.html  ← Post-order confirmation
+├── enquiry.html             ← Service enquiry & quote form ★ NEW Part 3
+├── robots.txt               ← SEO crawl rules ★ NEW Part 3
+├── sitemap.xml              ← Site map for search engines ★ NEW Part 3
+├── DEPLOYMENT.md            ← Netlify/GitHub Pages guide ★ NEW Part 3
 ├── css/
-│   └── style.css       # External stylesheet — full design system
-│
-├── images/             # All optimised images
-│   ├── hero-bakery.jpg
-│   ├── hero-bakery-400.jpg
-│   ├── hero-bakery-800.jpg
-│   ├── hero-bakery-1200.jpg
-│   ├── croissant.jpg
-│   ├── croissant-mobile.jpg
-│   ├── sourdough.jpg
-│   ├── cake.jpg
-│   ├── cinnamon-roll.jpg
-│   ├── quiche.jpg
-│   ├── macaron.jpg
-│   ├── bakery-interior.jpg
-│   ├── founders.jpg
-│   ├── emeka.jpg
-│   ├── mpho.jpg
-│   └── thandeka.jpg
-│
-├── README.md           # This document
-└── CHANGELOG.md        # Version history (see below / linked file)
+│   ├── style.css            ← Full design system (Part 2)
+│   ├── responsive.css       ← Mobile-first media queries (Part 2)
+│   └── part3.css            ← Dynamic component styles (Part 3)
+├── js/
+│   ├── main.js              ← Nav toggle, scroll, copyright year
+│   ├── products-data.js     ← Product data array (10 products)
+│   ├── products.js          ← ProductCatalogue class: search/filter/sort
+│   ├── form-validation.js   ← Shared validation utilities
+│   ├── enquiry.js           ← EnquiryForm: conditional fields, cost estimate
+│   ├── contact.js           ← ContactForm: live email preview, AJAX
+│   ├── order.js             ← Order page logic
+│   └── gallery.js           ← Gallery lightbox
+└── images/
+    ├── [product images]
+    └── gallery/
 ```
 
 ---
 
-## 📋 Part 2 — Submission Checklist
+## Changelog
 
-| Requirement | Status |
-|---|---|
-| External CSS file (`css/style.css`) created and linked on all pages | ✅ |
-| CSS Reset (`box-sizing`, `margin`, `padding`) implemented | ✅ |
-| Base styles: typography, colour variables, line-height, letter-spacing | ✅ |
-| Flexbox used for: Navigation bar, hero CTA row, form field rows, footer bottom | ✅ |
-| CSS Grid used for: Hero section, product gallery, about layout, contact layout, footer | ✅ |
-| `grid-template-areas` applied (hero section) | ✅ |
-| Visual styles: background colours, borders, `box-shadow` on cards | ✅ |
-| Pseudo-classes: `:hover`, `:focus`, `:active` on buttons, nav links, form inputs | ✅ |
-| Media queries at 1024px, 768px, 480px breakpoints | ✅ |
-| Mobile: multi-column → single-column layout shifts | ✅ |
-| Relative units (`rem`, `em`, `%`, `vw`, `clamp()`) used throughout | ✅ |
-| Responsive images: `srcset`, `sizes`, `<picture>` implemented with guidance comments | ✅ |
-| Developer comments explaining CSS and HTML engineering choices | ✅ |
-| Changelog documenting Part 1 feedback corrections | ✅ |
-| All pages linked to external stylesheet | ✅ |
-| README.md updated for Part 2 | ✅ |
+### [3.0.0] – 2026-06-17 (Part 3)
+#### Added
+- `enquiry.html` – full service enquiry form with conditional fields, JS validation, AJAX submit, and real-time cost estimate + availability response card
+- `js/products-data.js` – centralised product data store (10 products, 4 categories)
+- `js/products.js` – `ProductCatalogue` class: live debounced search, category filters, sort (price/name/rating/featured), dynamic DOM render
+- `js/form-validation.js` – shared `EMTValidation` object: sanitise, regex validators, DOM error helpers, loading state
+- `js/enquiry.js` – `EnquiryForm` class: service-type-driven conditional fieldsets, cost estimation, availability simulation
+- `js/contact.js` – `ContactForm` class: live email preview panel, blur validation, AJAX submission
+- `css/part3.css` – search controls, filter buttons, validation states (shake animation, error/success colours), response card, email preview, loading spinner
+- `robots.txt` – crawl rules, sitemap reference
+- `sitemap.xml` – all 7 pages with image extensions
+- `DEPLOYMENT.md` – Netlify and GitHub Pages step-by-step guide
 
----
-## 🔄 CHANGELOG
+#### Changed
+- `products.html` – static HTML grid replaced with dynamic JS-rendered grid + live search/filter UI
+- `contact.html` – enhanced with JS validation, live email preview, AJAX
+- All pages – `enquiry.html` added to nav and footer
+- All pages – meta descriptions updated for keyword optimisation
 
-All changes are recorded below per the assignment requirement to document edits made following Part 1 feedback, as well as Part 2 additions.
-
----
-
-### [2.0.0] — Part 2 Release — CSS Styling & Responsive Design
-
-#### ➕ Added (Part 2 New Features)
-- `css/style.css` — Full external stylesheet created with design system
-- CSS Custom Properties (`:root` variables) for colours, typography scale, spacing scale, shadows, and radii
-- Google Fonts integration: Cormorant Garamond (serif display), Jost (sans body), Dancing Script (accent)
-- Flexbox navigation bar with logo + link row using `justify-content: space-between`
-- CSS Grid hero section using `grid-template-areas: "text image"` with proportional 55/45 column split
-- CSS Grid 3-column product gallery with explicit `grid-template-columns: repeat(3, 1fr)`
-- CSS Grid auto-fit values strip using `minmax(22rem, 1fr)` for natural responsiveness
-- CSS Grid 2-column about/story layout with image and text columns
-- CSS Grid 2-column contact layout (form + sidebar)
-- CSS Grid 4-column footer (collapses to 2-col tablet, 1-col mobile)
-- Responsive breakpoints: `@media (max-width: 1024px)`, `@media (max-width: 768px)`, `@media (max-width: 480px)`
-- Mobile hamburger menu with `.is-open` toggle via vanilla JS
-- `:hover`, `:focus-visible`, `:active` pseudo-classes on all interactive elements
-- `box-shadow` cards with hover lift animation (`transform: translateY(-6px)`)
-- Image hover zoom effect on product cards via CSS `scale(1.06)` transition
-- Fluid typography using `clamp()` — no media query needed for headline scaling
-- `srcset` and `sizes` attributes on all `<img>` elements for responsive images
-- `<picture>` element with `<source media="">` for art-direction on hero and founders images
-- `loading="lazy"` on all below-fold images for performance
-- `@media (prefers-reduced-motion: reduce)` accessibility rule
-- Print stylesheet stripping navigation and CTAs
-
-#### 🔧 Fixed (Part 1 Feedback Corrections — Changelog)
-- **[Structural Fix]** Moved inline `style` attributes from HTML elements to external stylesheet — separates presentation from structure
-- **[Semantic Fix]** Replaced generic `<div class="header">` with semantic `<header role="banner">` element
-- **[Semantic Fix]** Wrapped navigation links in `<nav role="navigation" aria-label="Main navigation">` for correct landmark semantics
-- **[Semantic Fix]** Converted product list from `<div>` wrappers to `<ul role="list">` with `<li>` items
-- **[Semantic Fix]** Contact info wrapped in `<address>` element as per HTML5 specification
-- **[Accessibility Fix]** Added `aria-current="page"` to active navigation link on each respective page
-- **[Accessibility Fix]** Added `aria-label` to icon-only buttons and decorative elements marked `aria-hidden="true"`
-- **[Folder Fix]** Created `css/` subdirectory — previously `style.css` was in the root. All `<link>` tags updated to `href="css/style.css"`
-- **[Image Fix]** Added missing `width` and `height` attributes to all `<img>` tags to prevent Cumulative Layout Shift (CLS)
-- **[Image Fix]** Added descriptive `alt` text to images that previously had empty or missing alt attributes
-- **[Meta Fix]** Added `<meta name="description">` to `about.html` and `contact.html` which were missing from Part 1
-- **[Link Fix]** Corrected broken relative path on `about.html` that referenced `../index.html` instead of `index.html`
+#### Fixed (from Part 2 feedback)
+- `order-confirmation.html` – missing `og:title` and `canonical` tags added
+- `responsive.css` – footer grid tablet layout spacing corrected
+- All pages – `aria-current="page"` verified on all nav links
 
 ---
 
-### [1.0.0] — Part 1 Release — HTML Structure
-
-#### ➕ Added
-- Semantic HTML5 structure for all pages (index, about, contact)
-- `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>` elements
-- Product gallery structure with headings and image placeholders
-- Contact/order inquiry form with appropriate input types
-- README.md initial draft
-
----
-
-## 📚 References
-
-> Update this list with all sources used in Part 2, including tools, libraries, documentation, and tutorials. APA format recommended.
-
-- Mozilla Developer Network. (2025). *CSS Grid Layout*. https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
-- Mozilla Developer Network. (2025). *Flexbox*. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
-- Mozilla Developer Network. (2025). *Responsive images*. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
-- Mozilla Developer Network. (2025). *Using CSS custom properties*. https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-- Google Fonts. (2025). *Cormorant Garamond, Jost, Dancing Script*. https://fonts.google.com
-- CSS-Tricks. (2025). *A complete guide to Grid*. https://css-tricks.com/snippets/css/complete-guide-grid/
-- CSS-Tricks. (2025). *A complete guide to Flexbox*. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- W3C. (2025). *Web Content Accessibility Guidelines (WCAG) 2.1*. https://www.w3.org/TR/WCAG21/
+### [2.0.0] – 2026-05-29 (Part 2)
+- Complete CSS design system (style.css + responsive.css)
+- Google Fonts: Playfair Display + Lato
+- Mobile-first responsive design, 4 breakpoints (480px, 768px, 1024px, 1200px)
+- Hamburger nav toggle (main.js)
+- Flexbox navigation, CSS Grid product cards and footer
+- `grid-template-areas` on contact layout and footer
+- Hover, focus, active pseudo-class states throughout
 
 ---
 
-*Last updated: [28/05/2026] | WEDE5020POE Part 2*
+### [1.0.0] – 2026-04-06 (Part 1)
+- 7 semantic HTML5 pages with full ARIA landmarks
+- Project proposal Word document (300–500 words)
+- Content research document (SEO, brand voice, image sourcing)
+- Sitemap and wireframe descriptions
+- All SEO meta tags, Open Graph, canonical links
+
+---
+
+## SEO Strategy
+
+**Target Keywords:** `fresh bread Johannesburg` | `custom cakes Johannesburg` | `wedding cakes Johannesburg` | `artisan bakery near me` | `order cake online South Africa`
+
+**Technical SEO:** `robots.txt` + `sitemap.xml` submitted to Google Search Console, Open Graph on all pages, `loading="lazy"` on all below-fold images, Google Fonts with `display=swap`.
+
+**Local SEO:** Google Business Profile to be claimed post-deployment for local search visibility.
+
+---
+
+## References
+
+1. MDN Web Docs – HTML, CSS, JavaScript (2024). https://developer.mozilla.org
+2. W3C – WCAG 2.1 Guidelines (2023). https://www.w3.org/TR/WCAG21/
+3. Google Developers – SEO Starter Guide (2024). https://developers.google.com/search
+4. Google Developers – Sitemaps Overview (2024). https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+5. Robots.txt Specification (2024). https://www.robotstxt.org/
+6. Open Graph Protocol (2024). https://ogp.me/
+7. Netlify Docs (2024). https://docs.netlify.com/
+8. GitHub Pages Docs (2024). https://docs.github.com/en/pages
+9. OWASP – XSS Prevention Cheat Sheet (2024). https://cheatsheetseries.owasp.org
+10. POPIA – Protection of Personal Information Act No. 4 of 2013. https://www.justice.gov.za/inforeg/
+
+---
+*© 2026 [Guy Wa Mutamba] | IIE Rosebank College | WEDE5020*
